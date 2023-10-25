@@ -1,0 +1,100 @@
+#reading {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+#reading .reading-section {
+  max-width: 700px;
+  width: 100%;
+  background-color: #333;
+  border: 1px solid white;
+  margin: auto;
+}
+#reading .reading-section.summary .surface #all-card-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+#reading .reading-section.summary .surface #all-card-images .card-wrapper {
+  width: 100px;
+  background-color: #ccc;
+  color: #222;
+  padding: 5px;
+}
+#reading .reading-section.summary .surface #all-card-images .card-wrapper .card-image-container {
+  width: 100%;
+}
+#reading .reading-section.summary .surface #all-card-images .card-wrapper .card-image-container img {
+  width: 100%;
+}
+#reading .reading-section.summary .surface #all-card-images .card-wrapper p {
+  font-size: 0.8em;
+  font-style: italic;
+  line-height: 0.8em;
+  margin: 0;
+  text-align: center;
+}
+#reading .reading-section.summary .beneath #patterns-table {
+  width: 100%;
+  table-layout: fixed;
+}
+#reading .reading-section.summary .beneath #patterns-table th {
+  font-size: 0.85em;
+  font-weight: 400;
+}
+#reading .reading-section.summary .beneath #patterns-table td {
+  background-color: #444;
+  padding: 2px 5px;
+}
+#reading .reading-section .surface,
+#reading .reading-section .beneath {
+  padding: 15px 10px;
+}
+#reading .reading-section .surface p:first-child,
+#reading .reading-section .beneath p:first-child {
+  font-weight: bold;
+  margin-top: 0;
+}
+#reading .reading-section .surface {
+  min-height: 275px;
+  background-color: #555;
+}
+#reading .reading-section .surface .surface-info {
+  text-align: left;
+}
+#reading .reading-section .surface .surface-info .float-card {
+  width: 100px;
+  float: left;
+  text-align: center;
+  margin: 10px 10px 10px 0;
+}
+#reading .reading-section .surface .surface-info .float-card .card-image-container {
+  width: 100%;
+}
+#reading .reading-section .surface .surface-info .float-card .card-image-container img {
+  width: 100%;
+  display: flex;
+}
+#reading .reading-section .surface .surface-info .float-card .card-name {
+  font-size: 0.85em;
+  font-style: italic;
+  margin: 3px 0;
+}
+#reading .reading-section .beneath .compare {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+#reading .reading-section .beneath .compare table {
+  max-width: 300px;
+  width: 100%;
+}
+#reading .reading-section .beneath .compare table td {
+  background-color: #444;
+  padding: 2px 5px;
+}
+#reading .reading-section .beneath .compare table td.unlike {
+  background-color: #666;
+}/*# sourceMappingURL=reading.css.map */

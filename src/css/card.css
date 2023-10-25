@@ -1,0 +1,90 @@
+.card {
+  height: 100%;
+  max-width: 400px;
+  width: 100%;
+  aspect-ratio: 2/3.25;
+  background-color: #444;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+}
+.card,
+.card * {
+  box-sizing: border-box;
+}
+.card,
+.card .card-bottom {
+  gap: 10px;
+}
+.card .card-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.card .card-bottom .next-card,
+.card .card-bottom .not-feeling-it {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+.card .card-bottom .next-card button,
+.card .card-bottom .not-feeling-it button {
+  flex: 1;
+}
+.card .card-bottom .next-card button {
+  border-radius: 0 0 20px 20px;
+}
+.card .card-bottom .not-feeling-it button:first-child {
+  border-radius: 0 0 0 20px;
+}
+.card .card-bottom .not-feeling-it button:last-child {
+  border-radius: 0 0 20px 0;
+}
+.card .card-image-container {
+  height: 30%;
+}
+.card .card-image-container img {
+  height: 100%;
+}
+.card .card-name,
+.card .card-number {
+  font-weight: 700;
+}
+.card .card-number {
+  background-color: #666;
+  border-radius: 20px 20px 0 0;
+  padding: 10px;
+}
+.card .directions {
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.card p,
+.card .word-buttons {
+  margin: 0;
+}
+.card p {
+  padding: 0 5px;
+}
+.card .word-buttons {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  list-style-type: none;
+  padding: 0;
+}
+.card .word-buttons li {
+  width: 100%;
+}
+.card .word-buttons li button {
+  width: 100%;
+  background-color: lavender;
+  font-weight: 700;
+}
+.card .word-buttons li button.picked {
+  background-color: skyblue;
+}/*# sourceMappingURL=card.css.map */

@@ -1,0 +1,63 @@
+#vibe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#vibe-form button[type=submit] {
+  max-width: 150px;
+  width: 100%;
+  margin: auto;
+}
+#vibe-form p {
+  margin: 0;
+}
+#vibe-form #question {
+  height: 100px;
+  max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+}
+#vibe-form #radio-inputs {
+  max-width: 410px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: auto;
+}
+#vibe-form #radio-inputs input[type=radio] {
+  height: 200px;
+  width: calc(50% - 5px);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: lightsalmon;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#vibe-form #radio-inputs input[type=radio]:hover {
+  cursor: pointer;
+}
+#vibe-form #radio-inputs input[type=radio]:checked {
+  background-color: lightblue;
+}
+#vibe-form #radio-inputs input[type=radio]::before {
+  font-size: 1.5rem;
+}
+#vibe-form #radio-inputs input[type=radio]#advice::before {
+  content: "advice";
+}
+#vibe-form #radio-inputs input[type=radio]#inspiration::before {
+  content: "inspiration";
+}
+#vibe-form #radio-inputs input[type=radio]#self-discovery::before {
+  content: "self discovery";
+}
+#vibe-form #radio-inputs input[type=radio]#support::before {
+  content: "support";
+}/*# sourceMappingURL=vibe.css.map */

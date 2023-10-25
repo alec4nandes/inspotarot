@@ -1,0 +1,73 @@
+#vibe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    button[type="submit"] {
+        max-width: 150px;
+        width: 100%;
+        margin: auto;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    #question {
+        height: 100px;
+        max-width: 300px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+    }
+
+    #radio-inputs {
+        max-width: 410px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: auto;
+
+        input[type="radio"] {
+            height: 200px;
+            width: calc(50% - 5px);
+            appearance: none;
+            background-color: lightsalmon;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:checked {
+                background-color: lightblue;
+            }
+
+            &::before {
+                font-size: 1.5rem;
+            }
+
+            &#advice::before {
+                content: "advice";
+            }
+
+            &#inspiration::before {
+                content: "inspiration";
+            }
+
+            &#self-discovery::before {
+                content: "self discovery";
+            }
+
+            &#support::before {
+                content: "support";
+            }
+        }
+    }
+}
