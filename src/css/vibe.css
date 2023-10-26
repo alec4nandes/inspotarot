@@ -1,4 +1,4 @@
-@import "./colors.css";
+@import "./colors-and-fonts.css";
 #vibe-form {
   display: flex;
   flex-direction: column;
@@ -21,11 +21,13 @@
           appearance: none;
   background-color: #fff;
   border: 1px solid var(--text-pop);
+  border-radius: 3px;
   box-sizing: border-box;
   color: var(--text-pop);
   margin: auto;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 400;
+  padding: 5px 7px;
 }
 #vibe-form #question::-moz-placeholder {
   color: #999;
@@ -47,8 +49,7 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: var(--accent-1);
-  border: 1px solid var(--text-pop);
+  background-color: var(--section-bg);
   border-radius: 20px;
   box-shadow: var(--button-shadow);
   box-sizing: border-box;
@@ -67,6 +68,7 @@
   color: var(--text-pop);
 }
 #vibe-form #radio-inputs input[type=radio]::before {
+  color: var(--text-pop);
   font-size: 1.5rem;
 }
 #vibe-form #radio-inputs input[type=radio]#advice::before {
@@ -80,4 +82,10 @@
 }
 #vibe-form #radio-inputs input[type=radio]#support::before {
   content: "support";
+}
+
+@media only screen and (max-width: 350px) {
+  #radio-inputs input::before {
+    font-size: 1.1rem !important;
+  }
 }/*# sourceMappingURL=vibe.css.map */

@@ -1,4 +1,4 @@
-@import "./colors.css";
+@import "./colors-and-fonts.css";
 #reading {
   height: 100%;
   width: 100%;
@@ -37,7 +37,6 @@
   max-width: 700px;
   width: 100%;
   background-color: var(--section-bg);
-  border: 1px solid var(--text-pop);
   border-radius: 20px;
   box-shadow: var(--box-shadow);
   box-sizing: border-box;
@@ -46,7 +45,6 @@
 #reading #slide-container .slide .reading-section .slide-title {
   color: var(--text-pop);
   font-size: 1.4em;
-  font-style: italic;
   font-weight: bold;
   margin: 0;
   padding: 20px 10px 10px;
