@@ -2,7 +2,7 @@ import "../css/vibe.css";
 
 export default function Vibe({ setVibe, setQuestion }) {
     return (
-        <>
+        <div id="vibe">
             <h1>Tarot Something</h1>
             <form id="vibe-form" onSubmit={handleFormSubmit}>
                 <p>I'm looking for...</p>
@@ -39,7 +39,7 @@ export default function Vibe({ setVibe, setQuestion }) {
                 ></textarea>
                 <button type="submit">NEXT</button>
             </form>
-        </>
+        </div>
     );
 
     function handleFormSubmit(e) {

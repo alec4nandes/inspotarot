@@ -10,8 +10,9 @@ export default function Summary({ cards, vibe, question }) {
 
     return (
         <div className="reading-section summary">
+            <p className="slide-title">Summary</p>
             <div className="surface" style={{ minHeight: "auto" }}>
-                <p>On the Surface: A Summary</p>
+                <p>On the Surface</p>
                 <div id="all-card-images">
                     {cards.map((card, i) => (
                         <div className="card-wrapper" key={`${card}-${i}`}>
@@ -23,7 +24,7 @@ export default function Summary({ cards, vibe, question }) {
                 <p>{getSummarySurfacePrompt({ cards, vibe, question })}</p>
             </div>
             <div className="beneath">
-                <p>Beneath the Surface: A Summary</p>
+                <p>Beneath the Surface</p>
                 <PatternsTable {...{ patterns }} />
                 <p>{getSummaryBeneathPrompt(patterns)}</p>
             </div>
@@ -57,10 +58,14 @@ function PatternsTable({ patterns }) {
                         {reversed} / {size}
                     </td>
                     {Object.values(ranks).map((num, i) => (
-                        <td key={`rank-${i}`}>{num}</td>
+                        <td key={`rank-${i}`}>
+                            {num} / {size}
+                        </td>
                     ))}
                     {Object.values(suits).map((num, i) => (
-                        <td key={`suit-${i}`}>{num}</td>
+                        <td key={`suit-${i}`}>
+                            {num} / {size}
+                        </td>
                     ))}
                 </tr>
             </tbody>

@@ -28,7 +28,7 @@ export default function Card({ cardName, cards, setCards }) {
     }, [allWords]);
 
     return (
-        <>
+        <div id="card">
             <h1>Tarot Something</h1>
             <p>
                 Choose at least one word from 5 cards for your special reading.
@@ -61,6 +61,6 @@ export default function Card({ cardName, cards, setCards }) {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 }

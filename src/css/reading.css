@@ -23,7 +23,9 @@
   height: 100%;
   max-width: 100%;
   min-width: 100%;
+  box-sizing: border-box;
   overflow-y: auto;
+  padding: 50px 15px;
   scroll-snap-align: start;
 }
 #reading #slide-container .slide .reading-section {
@@ -32,6 +34,12 @@
   background-color: #333;
   border: 1px solid white;
   margin: auto;
+}
+#reading #slide-container .slide .reading-section .slide-title {
+  font-size: 1.4em;
+  font-style: italic;
+  font-weight: bold;
+  margin: 10px;
 }
 #reading #slide-container .slide .reading-section.summary .surface #all-card-images {
   display: flex;
@@ -90,7 +98,7 @@
   width: 100px;
   float: left;
   text-align: center;
-  margin: 10px 10px 10px 0;
+  margin: 10px 15px 15px 0;
 }
 #reading #slide-container .slide .reading-section .surface .surface-info .float-card .card-image-container {
   width: 100%;
@@ -98,11 +106,6 @@
 #reading #slide-container .slide .reading-section .surface .surface-info .float-card .card-image-container img {
   width: 100%;
   display: flex;
-}
-#reading #slide-container .slide .reading-section .surface .surface-info .float-card .card-name {
-  font-size: 0.85em;
-  font-style: italic;
-  margin: 3px 0;
 }
 #reading #slide-container .slide .reading-section .beneath .compare {
   display: flex;

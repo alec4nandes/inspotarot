@@ -16,7 +16,7 @@ export default function Beneath({ card, cards, vibe, question }) {
 
     return (
         <div className="beneath">
-            <p>Beneath the surface:</p>
+            <p>Beneath the Surface</p>
             <p>
                 <em>
                     <strong>all words:</strong> {card.words.join(", ")}
