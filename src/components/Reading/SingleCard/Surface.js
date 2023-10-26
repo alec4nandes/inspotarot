@@ -1,8 +1,10 @@
+import { useRef } from "react";
 import { getCardSurfacePrompt } from "../../../scripts/prompts.js";
+import { streamOpenAiResponse, getCardsId } from "../../../scripts/openai.js";
 import CardImage from "../../CardImage";
 
-export default function Surface({ card, vibe, question }) {
-    const prompt = getCardSurfacePrompt({ card, vibe, question });
+export default function Surface({ card, vibe, question, cards }) {
+    const ref = useRef();
 
     return (
         <>
@@ -19,9 +21,16 @@ export default function Surface({ card, vibe, question }) {
                             {card.picked.join(", ")}
                         </em>
                     </p>
-                    <p>{prompt}</p>
+                    <p ref={ref} id={getCardsId(cards)}>
+                        <button onClick={handleGetReading}>GET READING</button>
+                    </p>
                 </div>
             </div>
         </>
     );
+
+    function handleGetReading() {
+        const prompt = getCardSurfacePrompt({ card, vibe, question });
+        streamOpenAiResponse({ cards, prompt, ref });
+    }
 }

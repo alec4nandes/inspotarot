@@ -1,8 +1,10 @@
+import { useRef } from "react";
 import {
     getSummaryBeneathPrompt,
     getSummarySurfacePrompt,
 } from "../../scripts/prompts.js";
 import { getPatterns } from "../../scripts/patterns.js";
+import { streamOpenAiResponse, getCardsId } from "../../scripts/openai.js";
 import CardImage from "../CardImage";
 
 export default function Summary({ cards, vibe, question }) {
@@ -21,15 +23,36 @@ export default function Summary({ cards, vibe, question }) {
                         </div>
                     ))}
                 </div>
-                <p>{getSummarySurfacePrompt({ cards, vibe, question })}</p>
+                <AiResponse isSurface={true} />
             </div>
             <div className="beneath">
                 <p>Beneath the Surface</p>
                 <PatternsTable {...{ patterns }} />
-                <p>{getSummaryBeneathPrompt(patterns)}</p>
+                <AiResponse isSurface={false} />
             </div>
         </div>
     );
+
+    function AiResponse({ isSurface }) {
+        const ref = useRef();
+
+        return (
+            <p ref={ref} id={getCardsId(cards)}>
+                <button onClick={handleGetReading}>GET READING</button>
+            </p>
+        );
+
+        function handleGetReading() {
+            const prompt = isSurface
+                ? getSummarySurfacePrompt({ cards, vibe, question })
+                : getSummaryBeneathPrompt(patterns);
+            streamOpenAiResponse({
+                cards,
+                prompt,
+                ref,
+            });
+        }
+    }
 }
 
 function PatternsTable({ patterns }) {

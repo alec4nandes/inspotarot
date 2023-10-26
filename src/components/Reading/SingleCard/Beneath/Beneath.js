@@ -1,18 +1,17 @@
+import { useRef } from "react";
 import { compareCards } from "../../../../scripts/compare.js";
 import { getCardBeneathPrompt } from "../../../../scripts/prompts.js";
+import {
+    streamOpenAiResponse,
+    getCardsId,
+} from "../../../../scripts/openai.js";
 import Matching from "./Matching.js";
 import Opposites from "./Opposites.js";
 
 export default function Beneath({ card, cards, vibe, question }) {
-    const { matching, opposites } = compareCards(cards),
-        compare = getRelations({ card, matching, opposites }),
-        prompt = getCardBeneathPrompt({
-            card,
-            matching: matchingHelper({ matching, card }),
-            opposites: compare.opposites,
-            vibe,
-            question,
-        });
+    const ref = useRef(),
+        { matching, opposites } = compareCards(cards),
+        compare = getRelations({ card, matching, opposites });
 
     return (
         <div className="beneath">
@@ -26,9 +25,22 @@ export default function Beneath({ card, cards, vibe, question }) {
                 <Matching matching={compare.matching} />
                 <Opposites opposites={compare.opposites} />
             </div>
-            <p>{prompt}</p>
+            <p ref={ref} id={getCardsId(cards)}>
+                <button onClick={handleGetReading}>GET READING</button>
+            </p>
         </div>
     );
+
+    function handleGetReading() {
+        const prompt = getCardBeneathPrompt({
+            card,
+            matching: matchingHelper({ matching, card }),
+            opposites: compare.opposites,
+            vibe,
+            question,
+        });
+        streamOpenAiResponse({ cards, prompt, ref });
+    }
 }
 
 function getRelations({ card, matching, opposites }) {
