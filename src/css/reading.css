@@ -1,100 +1,123 @@
 #reading {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  overflow: hidden;
 }
-#reading .reading-section {
+#reading nav {
+  display: flex;
+  gap: 5px;
+}
+#reading nav button {
+  flex: 1;
+}
+#reading #slide-container {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+#reading #slide-container .slide {
+  height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  overflow-y: auto;
+  scroll-snap-align: start;
+}
+#reading #slide-container .slide .reading-section {
   max-width: 700px;
   width: 100%;
   background-color: #333;
   border: 1px solid white;
   margin: auto;
 }
-#reading .reading-section.summary .surface #all-card-images {
+#reading #slide-container .slide .reading-section.summary .surface #all-card-images {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
 }
-#reading .reading-section.summary .surface #all-card-images .card-wrapper {
+#reading #slide-container .slide .reading-section.summary .surface #all-card-images .card-wrapper {
   width: 100px;
   background-color: #ccc;
   color: #222;
   padding: 5px;
 }
-#reading .reading-section.summary .surface #all-card-images .card-wrapper .card-image-container {
+#reading #slide-container .slide .reading-section.summary .surface #all-card-images .card-wrapper .card-image-container {
   width: 100%;
 }
-#reading .reading-section.summary .surface #all-card-images .card-wrapper .card-image-container img {
+#reading #slide-container .slide .reading-section.summary .surface #all-card-images .card-wrapper .card-image-container img {
   width: 100%;
 }
-#reading .reading-section.summary .surface #all-card-images .card-wrapper p {
+#reading #slide-container .slide .reading-section.summary .surface #all-card-images .card-wrapper p {
   font-size: 0.8em;
   font-style: italic;
   line-height: 0.8em;
   margin: 0;
   text-align: center;
 }
-#reading .reading-section.summary .beneath #patterns-table {
+#reading #slide-container .slide .reading-section.summary .beneath #patterns-table {
   width: 100%;
   table-layout: fixed;
 }
-#reading .reading-section.summary .beneath #patterns-table th {
+#reading #slide-container .slide .reading-section.summary .beneath #patterns-table th {
   font-size: 0.85em;
   font-weight: 400;
 }
-#reading .reading-section.summary .beneath #patterns-table td {
+#reading #slide-container .slide .reading-section.summary .beneath #patterns-table td {
   background-color: #444;
   padding: 2px 5px;
 }
-#reading .reading-section .surface,
-#reading .reading-section .beneath {
+#reading #slide-container .slide .reading-section .surface,
+#reading #slide-container .slide .reading-section .beneath {
   padding: 15px 10px;
 }
-#reading .reading-section .surface p:first-child,
-#reading .reading-section .beneath p:first-child {
+#reading #slide-container .slide .reading-section .surface p:first-child,
+#reading #slide-container .slide .reading-section .beneath p:first-child {
   font-weight: bold;
   margin-top: 0;
 }
-#reading .reading-section .surface {
+#reading #slide-container .slide .reading-section .surface {
   min-height: 275px;
   background-color: #555;
 }
-#reading .reading-section .surface .surface-info {
+#reading #slide-container .slide .reading-section .surface .surface-info {
   text-align: left;
 }
-#reading .reading-section .surface .surface-info .float-card {
+#reading #slide-container .slide .reading-section .surface .surface-info .float-card {
   width: 100px;
   float: left;
   text-align: center;
   margin: 10px 10px 10px 0;
 }
-#reading .reading-section .surface .surface-info .float-card .card-image-container {
+#reading #slide-container .slide .reading-section .surface .surface-info .float-card .card-image-container {
   width: 100%;
 }
-#reading .reading-section .surface .surface-info .float-card .card-image-container img {
+#reading #slide-container .slide .reading-section .surface .surface-info .float-card .card-image-container img {
   width: 100%;
   display: flex;
 }
-#reading .reading-section .surface .surface-info .float-card .card-name {
+#reading #slide-container .slide .reading-section .surface .surface-info .float-card .card-name {
   font-size: 0.85em;
   font-style: italic;
   margin: 3px 0;
 }
-#reading .reading-section .beneath .compare {
+#reading #slide-container .slide .reading-section .beneath .compare {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-#reading .reading-section .beneath .compare table {
+#reading #slide-container .slide .reading-section .beneath .compare table {
   max-width: 300px;
   width: 100%;
 }
-#reading .reading-section .beneath .compare table td {
+#reading #slide-container .slide .reading-section .beneath .compare table td {
   background-color: #444;
   padding: 2px 5px;
 }
-#reading .reading-section .beneath .compare table td.unlike {
+#reading #slide-container .slide .reading-section .beneath .compare table td.unlike {
   background-color: #666;
 }/*# sourceMappingURL=reading.css.map */

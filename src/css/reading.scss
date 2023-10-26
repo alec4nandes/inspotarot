@@ -1,124 +1,151 @@
 #reading {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    overflow: hidden;
 
-    .reading-section {
-        max-width: 700px;
+    nav {
+        display: flex;
+        gap: 5px;
+
+        button {
+            flex: 1;
+        }
+    }
+
+    #slide-container {
         width: 100%;
-        background-color: #333;
-        border: 1px solid white;
-        margin: auto;
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+        scroll-snap-type: x mandatory;
 
-        &.summary {
-            .surface {
-                #all-card-images {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    gap: 10px;
+        .slide {
+            height: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            overflow-y: auto;
+            scroll-snap-align: start;
 
-                    .card-wrapper {
-                        width: 100px;
-                        background-color: #ccc;
-                        color: #222;
-                        padding: 5px;
+            .reading-section {
+                max-width: 700px;
+                width: 100%;
+                background-color: #333;
+                border: 1px solid white;
+                margin: auto;
 
-                        .card-image-container {
-                            width: 100%;
+                &.summary {
+                    .surface {
+                        #all-card-images {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            gap: 10px;
 
-                            img {
-                                width: 100%;
+                            .card-wrapper {
+                                width: 100px;
+                                background-color: #ccc;
+                                color: #222;
+                                padding: 5px;
+
+                                .card-image-container {
+                                    width: 100%;
+
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+
+                                p {
+                                    font-size: 0.8em;
+                                    font-style: italic;
+                                    line-height: 0.8em;
+                                    margin: 0;
+                                    text-align: center;
+                                }
                             }
                         }
-
-                        p {
-                            font-size: 0.8em;
-                            font-style: italic;
-                            line-height: 0.8em;
-                            margin: 0;
-                            text-align: center;
-                        }
-                    }
-                }
-            }
-
-            .beneath {
-                #patterns-table {
-                    width: 100%;
-                    table-layout: fixed;
-
-                    th {
-                        font-size: 0.85em;
-                        font-weight: 400;
                     }
 
-                    td {
-                        background-color: #444;
-                        padding: 2px 5px;
-                    }
-                }
-            }
-        }
-
-        .surface,
-        .beneath {
-            padding: 15px 10px;
-
-            p:first-child {
-                font-weight: bold;
-                margin-top: 0;
-            }
-        }
-
-        .surface {
-            min-height: 275px;
-            background-color: #555;
-
-            .surface-info {
-                text-align: left;
-
-                .float-card {
-                    width: 100px;
-                    float: left;
-                    text-align: center;
-                    margin: 10px 10px 10px 0;
-
-                    .card-image-container {
-                        width: 100%;
-
-                        img {
+                    .beneath {
+                        #patterns-table {
                             width: 100%;
-                            display: flex;
+                            table-layout: fixed;
+
+                            th {
+                                font-size: 0.85em;
+                                font-weight: 400;
+                            }
+
+                            td {
+                                background-color: #444;
+                                padding: 2px 5px;
+                            }
                         }
                     }
+                }
 
-                    .card-name {
-                        font-size: 0.85em;
-                        font-style: italic;
-                        margin: 3px 0;
+                .surface,
+                .beneath {
+                    padding: 15px 10px;
+
+                    p:first-child {
+                        font-weight: bold;
+                        margin-top: 0;
                     }
                 }
-            }
-        }
 
-        .beneath {
-            .compare {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
+                .surface {
+                    min-height: 275px;
+                    background-color: #555;
 
-                table {
-                    max-width: 300px;
-                    width: 100%;
+                    .surface-info {
+                        text-align: left;
 
-                    td {
-                        background-color: #444;
-                        padding: 2px 5px;
+                        .float-card {
+                            width: 100px;
+                            float: left;
+                            text-align: center;
+                            margin: 10px 10px 10px 0;
 
-                        &.unlike {
-                            background-color: #666;
+                            .card-image-container {
+                                width: 100%;
+
+                                img {
+                                    width: 100%;
+                                    display: flex;
+                                }
+                            }
+
+                            .card-name {
+                                font-size: 0.85em;
+                                font-style: italic;
+                                margin: 3px 0;
+                            }
+                        }
+                    }
+                }
+
+                .beneath {
+                    .compare {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 20px;
+                        justify-content: center;
+
+                        table {
+                            max-width: 300px;
+                            width: 100%;
+
+                            td {
+                                background-color: #444;
+                                padding: 2px 5px;
+
+                                &.unlike {
+                                    background-color: #666;
+                                }
+                            }
                         }
                     }
                 }

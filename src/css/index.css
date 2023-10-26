@@ -1,6 +1,12 @@
+html,
+body,
+#root {
+    height: 100%;
+}
+
 #root {
     box-sizing: border-box;
-    padding: 50px 10px;
+    text-align: center;
 }
 
 body {
