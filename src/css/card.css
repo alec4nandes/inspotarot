@@ -2,7 +2,6 @@
 .card {
   max-width: 400px;
   width: 100%;
-  aspect-ratio: 2/3.25;
   background-color: var(--accent-3);
   border-radius: 20px;
   box-shadow: var(--box-shadow);
@@ -43,11 +42,8 @@
 .card .card-bottom .not-feeling-it button:last-child {
   border-radius: 0 0 20px 0;
 }
-.card .card-image-container {
-  height: 30%;
-}
 .card .card-image-container img {
-  height: 100%;
+  height: 200px;
 }
 .card .card-name,
 .card .card-number {
@@ -68,7 +64,7 @@
   margin: 0;
 }
 .card p {
-  padding: 0 5px;
+  padding: 0 10px;
 }
 .card .word-buttons {
   min-height: 240px;
