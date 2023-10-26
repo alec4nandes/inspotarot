@@ -1,9 +1,12 @@
+@import "./colors.css";
+
 .card {
     max-width: 400px;
     width: 100%;
     aspect-ratio: 2/3.25;
-    background-color: #444;
+    background-color: var(--section-bg);
     border-radius: 20px;
+    box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,9 +70,15 @@
         font-weight: 700;
     }
 
+    .card-name {
+        color: var(--text-pop);
+        font-size: 1.4em;
+    }
+
     .card-number {
-        background-color: #666;
+        background-color: var(--button-bg);
         border-radius: 20px 20px 0 0;
+        color: var(--button-text);
         padding: 10px;
     }
 
@@ -101,11 +110,13 @@
 
             button {
                 width: 100%;
-                background-color: lavender;
+                background-color: var(--accent-1);
+                color: var(--text-color);
                 font-weight: 700;
 
                 &.picked {
-                    background-color: skyblue;
+                    background-color: var(--highlight-color);
+                    color: var(--text-pop);
                 }
             }
         }

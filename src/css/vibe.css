@@ -1,3 +1,4 @@
+@import "./colors.css";
 #vibe-form {
   display: flex;
   flex-direction: column;
@@ -15,23 +16,41 @@
   height: 100px;
   max-width: 300px;
   width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border: 1px solid var(--text-pop);
   box-sizing: border-box;
+  color: var(--text-pop);
   margin: auto;
+  font-size: 1.3em;
+  font-weight: 400;
+}
+#vibe-form #question::-moz-placeholder {
+  color: #999;
+}
+#vibe-form #question::placeholder {
+  color: #999;
 }
 #vibe-form #radio-inputs {
-  max-width: 410px;
+  --gap: 20px;
+  max-width: calc(400px + var(--gap));
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--gap);
   margin: auto;
 }
 #vibe-form #radio-inputs input[type=radio] {
   height: 200px;
-  width: calc(50% - 5px);
+  width: calc(50% - var(--gap) / 2);
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: lightsalmon;
+  background-color: var(--accent-1);
+  border: 1px solid var(--text-pop);
+  border-radius: 20px;
+  box-shadow: var(--button-shadow);
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -44,7 +63,8 @@
   cursor: pointer;
 }
 #vibe-form #radio-inputs input[type=radio]:checked {
-  background-color: lightblue;
+  background-color: var(--highlight-color);
+  color: var(--text-pop);
 }
 #vibe-form #radio-inputs input[type=radio]::before {
   font-size: 1.5rem;

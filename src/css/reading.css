@@ -1,3 +1,4 @@
+@import "./colors.css";
 #reading {
   height: 100%;
   width: 100%;
@@ -31,9 +32,7 @@
 #reading #slide-container .slide .reading-section {
   max-width: 700px;
   width: 100%;
-  background-color: #333;
-  border: 1px solid white;
-  box-sizing: border-box;
+  background-color: var(--section-bg);
   margin: auto;
 }
 #reading #slide-container .slide .reading-section .slide-title {
@@ -50,8 +49,7 @@
 }
 #reading #slide-container .slide .reading-section.summary .surface #all-card-images .card-wrapper {
   width: 100px;
-  background-color: #ccc;
-  color: #222;
+  background-color: var(--button-bg);
   padding: 5px;
 }
 #reading #slide-container .slide .reading-section.summary .surface #all-card-images .card-wrapper .card-image-container {
@@ -76,7 +74,7 @@
   font-weight: 400;
 }
 #reading #slide-container .slide .reading-section.summary .beneath #patterns-table td {
-  background-color: #444;
+  background-color: var(--section-bg);
   padding: 2px 5px;
 }
 #reading #slide-container .slide .reading-section .surface,
@@ -90,7 +88,6 @@
 }
 #reading #slide-container .slide .reading-section .surface {
   min-height: 275px;
-  background-color: #555;
 }
 #reading #slide-container .slide .reading-section .surface .surface-info {
   text-align: left;
@@ -108,6 +105,9 @@
   width: 100%;
   display: flex;
 }
+#reading #slide-container .slide .reading-section .beneath {
+  background-color: var(--section-accent-2);
+}
 #reading #slide-container .slide .reading-section .beneath .compare {
   display: flex;
   flex-wrap: wrap;
@@ -119,9 +119,9 @@
   width: 100%;
 }
 #reading #slide-container .slide .reading-section .beneath .compare table td {
-  background-color: #444;
+  background-color: var(--section-bg);
   padding: 2px 5px;
 }
 #reading #slide-container .slide .reading-section .beneath .compare table td.unlike {
-  background-color: #666;
+  background-color: var(--section-accent-1);
 }/*# sourceMappingURL=reading.css.map */

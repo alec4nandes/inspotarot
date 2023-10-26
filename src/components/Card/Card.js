@@ -29,7 +29,7 @@ export default function Card({ cardName, cards, setCards }) {
 
     return (
         <div id="card">
-            <h1>Tarot Something</h1>
+            <h1>InspoTarot</h1>
             <p>
                 Choose at least one word from 5 cards for your special reading.
             </p>
