@@ -27,7 +27,7 @@ export default function Summary({ cards, vibe, question }) {
             </div>
             <div className="beneath">
                 <p>Beneath the Surface</p>
-                <PatternsTable {...{ patterns }} />
+                <Patterns {...{ patterns }} />
                 <AiResponse isSurface={false} />
             </div>
         </div>
@@ -55,43 +55,39 @@ export default function Summary({ cards, vibe, question }) {
     }
 }
 
-function PatternsTable({ patterns }) {
+function Patterns({ patterns }) {
     const { majors, reversed, size, ranks, suits } = patterns;
 
     return (
-        <table id="patterns-table">
-            <thead>
-                <tr>
-                    <th>major arcana</th>
-                    <th>reversed</th>
-                    {Object.keys(ranks).map((rank) => (
-                        <th key={rank}>{rank.toLowerCase()}</th>
-                    ))}
-                    {Object.keys(suits).map((suit) => (
-                        <th key={suit}>{suit.toLowerCase()}</th>
-                    ))}
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        {majors} / {size}
-                    </td>
-                    <td>
-                        {reversed} / {size}
-                    </td>
-                    {Object.values(ranks).map((num, i) => (
-                        <td key={`rank-${i}`}>
-                            {num} / {size}
-                        </td>
-                    ))}
-                    {Object.values(suits).map((num, i) => (
-                        <td key={`suit-${i}`}>
-                            {num} / {size}
-                        </td>
-                    ))}
-                </tr>
-            </tbody>
-        </table>
+        <div id="patterns">
+            <div>
+                <div>major arcana</div>
+                <div>
+                    {majors} / {size}
+                </div>
+            </div>
+            <div>
+                <div>reversed</div>
+                <div>
+                    {reversed} / {size}
+                </div>
+            </div>
+            {Object.entries(ranks).map(([rank, num]) => (
+                <div key={rank}>
+                    <div>{rank.toLowerCase()}</div>
+                    <div>
+                        {num} / {size}
+                    </div>
+                </div>
+            ))}
+            {Object.entries(suits).map(([suit, num]) => (
+                <div key={suit}>
+                    <div>{suit.toLowerCase()}</div>
+                    <div>
+                        {num} / {size}
+                    </div>
+                </div>
+            ))}
+        </div>
     );
 }

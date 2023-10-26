@@ -1,18 +1,18 @@
 @import url("https://api.fontshare.com/v2/css?f[]=supreme@400&f[]=chubbo@700&display=swap");
 
 :root {
-    --accent-1: #d4d4ff;
-    --bg-color: #f1f1ff;
+    --accent-1: #f1f1ff;
+    --accent-2: #eee;
+    --accent-3: #e3e3ff;
+    --accent-4: #d4d4ff;
+    --accent-5: #acacff;
+    --accent-6: #8484ff;
+    --accent-7: #5c5cb2;
+
     --box-shadow: 0 0 20px rgba(50, 50, 50, 0.5);
-    --button-bg: #8484ff;
     --button-shadow: 0 0 10px rgba(132, 132, 255, 0.75);
-    --button-text: #eee;
     --highlight-color: #fff0e7;
-    --section-accent-1: var(--bg-color);
-    --section-accent-2: #5c5cb2;
-    --section-bg: #e3e3ff;
     --text-color: #111;
-    --text-pop: #8484ff;
 }
 
 body * {
@@ -22,6 +22,7 @@ body * {
 h1,
 .card-number,
 .card-name,
+.compare table td:first-child:not(.unlike),
 #radio-inputs input:before,
 .slide-title,
 .word-buttons button {

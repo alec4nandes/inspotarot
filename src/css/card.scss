@@ -4,7 +4,7 @@
     max-width: 400px;
     width: 100%;
     aspect-ratio: 2/3.25;
-    background-color: var(--section-bg);
+    background-color: var(--accent-3);
     border-radius: 20px;
     box-shadow: var(--box-shadow);
     display: flex;
@@ -71,20 +71,15 @@
     }
 
     .card-name {
-        color: var(--text-pop);
+        color: var(--accent-6);
         font-size: 1.4em;
     }
 
     .card-number {
-        background-color: var(--button-bg);
+        background-color: var(--accent-6);
         border-radius: 20px 20px 0 0;
-        color: var(--button-text);
+        color: var(--accent-2);
         padding: 10px;
-    }
-
-    .directions {
-        font-size: 0.85rem;
-        font-style: italic;
     }
 
     p,
@@ -110,15 +105,24 @@
 
             button {
                 width: 100%;
-                background-color: var(--accent-1);
-                color: var(--text-color);
+                background-color: var(--accent-4);
+                color: var(--accent-7);
+                font-size: 1.1em;
                 font-weight: 700;
 
                 &.picked {
                     background-color: var(--highlight-color);
-                    color: var(--text-pop);
+                    color: var(--accent-6);
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .not-feeling-it button {
+        box-sizing: border-box;
+        font-size: 0.8em !important;
+        padding: 0;
     }
 }

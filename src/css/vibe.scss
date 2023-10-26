@@ -21,10 +21,10 @@
         width: 100%;
         appearance: none;
         background-color: #fff;
-        border: 1px solid var(--text-pop);
+        border: 1px solid var(--accent-6);
         border-radius: 3px;
         box-sizing: border-box;
-        color: var(--text-pop);
+        color: var(--accent-6);
         margin: auto;
         font-size: 1.2em;
         font-weight: 400;
@@ -48,7 +48,7 @@
             height: 200px;
             width: calc(50% - (var(--gap) / 2));
             appearance: none;
-            background-color: var(--section-bg);
+            background-color: var(--accent-3);
             border-radius: 20px;
             box-shadow: var(--button-shadow);
             box-sizing: border-box;
@@ -69,7 +69,7 @@
             }
 
             &::before {
-                color: var(--text-pop);
+                color: var(--accent-6);
                 font-size: 1.5rem;
             }
 

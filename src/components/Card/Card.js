@@ -39,9 +39,11 @@ export default function Card({ cardName, cards, setCards }) {
                     <p className="card-number">Card #{cards.length + 1}</p>
                     <CardImage {...{ card }} />
                     <p className="card-name">{card.name}</p>
-                    <p className="directions">
-                        Look deep within and pick at least one word you relate
-                        to.
+                    <p>
+                        <em>
+                            Look deep within, and then pick at least one word
+                            that relates to you:
+                        </em>
                     </p>
                     <WordButtons {...{ shownWords, picked, setPicked }} />
                     <div className="card-bottom">
