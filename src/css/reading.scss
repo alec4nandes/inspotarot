@@ -12,7 +12,12 @@
         gap: 5px;
 
         button {
+            background-color: var(--section-accent-2);
             flex: 1;
+
+            &:hover {
+                background-color: var(--highlight-color);
+            }
         }
     }
 
@@ -29,20 +34,26 @@
             min-width: 100%;
             box-sizing: border-box;
             overflow-y: auto;
-            padding: 50px 15px;
+            padding: 30px 15px 50px;
             scroll-snap-align: start;
 
             .reading-section {
                 max-width: 700px;
                 width: 100%;
                 background-color: var(--section-bg);
+                border: 1px solid var(--text-pop);
+                border-radius: 20px;
+                box-shadow: var(--box-shadow);
+                box-sizing: border-box;
                 margin: auto;
 
                 .slide-title {
+                    color: var(--text-pop);
                     font-size: 1.4em;
                     font-style: italic;
                     font-weight: bold;
-                    margin: 10px;
+                    margin: 0;
+                    padding: 20px 10px 10px;
                 }
 
                 &.summary {
@@ -55,7 +66,9 @@
 
                             .card-wrapper {
                                 width: 100px;
-                                background-color: var(--button-bg);
+                                background-color: var(--bg-color);
+                                border: 1px solid var(--text-pop);
+                                border-radius: 10px;
                                 padding: 5px;
 
                                 .card-image-container {
@@ -69,7 +82,7 @@
                                 p {
                                     font-size: 0.8em;
                                     font-style: italic;
-                                    line-height: 0.8em;
+                                    line-height: 1em;
                                     margin: 0;
                                     text-align: center;
                                 }
@@ -89,6 +102,7 @@
 
                             td {
                                 background-color: var(--section-bg);
+                                color: var(--text-color);
                                 padding: 2px 5px;
                             }
                         }
@@ -126,11 +140,19 @@
                                 }
                             }
                         }
+
+                        .your-words {
+                            strong {
+                                color: var(--text-pop);
+                            }
+                        }
                     }
                 }
 
                 .beneath {
                     background-color: var(--section-accent-2);
+                    border-radius: 0 0 20px 20px;
+                    color: var(--button-text);
 
                     .compare {
                         display: flex;
@@ -141,13 +163,18 @@
                         table {
                             max-width: 300px;
                             width: 100%;
+                            color: var(--text-color);
 
                             td {
-                                background-color: var(--section-bg);
-                                padding: 2px 5px;
+                                background-color: var(--accent-1);
+                                padding: 4px 7px;
+
+                                &:first-child {
+                                    background-color: var(--bg-color);
+                                }
 
                                 &.unlike {
-                                    background-color: var(--section-accent-1);
+                                    background-color: var(--highlight-color);
                                 }
                             }
                         }

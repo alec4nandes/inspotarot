@@ -65,10 +65,10 @@ function PatternsTable({ patterns }) {
                     <th>major arcana</th>
                     <th>reversed</th>
                     {Object.keys(ranks).map((rank) => (
-                        <th key={rank}>{rank}</th>
+                        <th key={rank}>{rank.toLowerCase()}</th>
                     ))}
                     {Object.keys(suits).map((suit) => (
-                        <th key={suit}>{suit}</th>
+                        <th key={suit}>{suit.toLowerCase()}</th>
                     ))}
                 </tr>
             </thead>

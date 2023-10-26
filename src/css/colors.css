@@ -3,13 +3,12 @@
     --bg-color: #f1f1ff;
     --box-shadow: 0 0 20px rgba(50, 50, 50, 0.5);
     --button-bg: #8484ff;
-    --button-text: #eee;
     --button-shadow: 0 0 10px rgba(132, 132, 255, 0.75);
+    --button-text: #eee;
     --highlight-color: #f9e8de;
-    --section-accent-1: #ffdac7;
-    --section-accent-2: #333;
+    --section-accent-1: var(--bg-color);
+    --section-accent-2: #5c5cb2;
     --section-bg: #e3e3ff;
-    --special-button-bg: #fef1ea;
     --text-color: #111;
     --text-pop: #8484ff;
 }

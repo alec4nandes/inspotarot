@@ -15,7 +15,7 @@ export default function Surface({ card, vibe, question, cards }) {
                     <div className="float-card">
                         <CardImage {...{ card }} />
                     </div>
-                    <p>
+                    <p className="your-words">
                         <em>
                             <strong>your words:</strong>{" "}
                             {card.picked.join(", ")}
