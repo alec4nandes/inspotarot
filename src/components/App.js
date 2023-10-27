@@ -1,13 +1,18 @@
 import "../css/get-readings.css";
 import { useEffect, useState } from "react";
 import { getDifferentCardName } from "./Card/NotFeelingIt";
+import { auth } from "../scripts/database.js";
+import { onAuthStateChanged } from "firebase/auth";
 import Card from "./Card/Card";
 import GetReadings from "./GetReadings";
+import Portal, { Unverified } from "./Portal";
 import Reading from "./Reading/Reading";
 import Vibe from "./Vibe";
 
 export default function App() {
-    const [vibe, setVibe] = useState(),
+    const [loaded, setLoaded] = useState(false),
+        [user, setUser] = useState(),
+        [vibe, setVibe] = useState(),
         [question, setQuestion] = useState(),
         [cards, setCards] = useState(),
         [cardName, setCardName] = useState(),
@@ -25,13 +30,34 @@ export default function App() {
         window.scrollTo({ top: 0 });
     }, [cards]);
 
-    return !vibe ? (
-        <Vibe {...{ setVibe, setQuestion }} />
-    ) : cards.length < 5 ? (
-        <Card {...{ cardName, cards, setCards }} />
-    ) : !showReading ? (
-        <GetReadings {...{ vibe, setShowReading }} />
+    // CHECK USER LOGIN STATUS
+    useEffect(() => {
+        onAuthStateChanged(auth, async (user) => {
+            user && setUser(await getUserData(user));
+            setLoaded(true);
+        });
+
+        async function getUserData(user) {
+            const { email, emailVerified } = user || {};
+            return { email, emailVerified };
+        }
+    }, []);
+
+    return loaded ? (
+        !user ? (
+            <Portal />
+        ) : !user.emailVerified ? (
+            <Unverified {...{ user }} />
+        ) : !vibe ? (
+            <Vibe {...{ setVibe, setQuestion }} />
+        ) : cards.length < 5 ? (
+            <Card {...{ cardName, cards, setCards }} />
+        ) : !showReading ? (
+            <GetReadings {...{ vibe, setShowReading }} />
+        ) : (
+            <Reading {...{ vibe, setVibe, question, cards }} />
+        )
     ) : (
-        <Reading {...{ vibe, setVibe, question, cards }} />
+        <></>
     );
 }

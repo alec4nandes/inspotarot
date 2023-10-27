@@ -1,0 +1,46 @@
+@import "./colors-and-fonts.css";
+#portal,
+#unverified {
+  gap: 20px;
+  padding: 50px 15px;
+}
+#portal,
+#portal form,
+#unverified,
+#unverified form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#portal form,
+#unverified form {
+  gap: 10px;
+}
+#portal form input,
+#unverified form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border: 0;
+  border-bottom: 2px solid var(--accent-6);
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--accent-6);
+}
+#portal form input:-webkit-autofill,
+#unverified form input:-webkit-autofill {
+  -webkit-transition: 60000s;
+  transition: 60000s;
+}
+#portal form #user-options button,
+#unverified form #user-options button {
+  flex: 1;
+}
+#portal #user-options,
+#unverified #user-options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}/*# sourceMappingURL=portal.css.map */

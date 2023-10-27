@@ -1,15 +1,17 @@
 import { IS_DEVELOPMENT } from "../scripts/openai.js";
+import SignOut from "./SignOut.js";
 
-export default function Header() {
+export default function Header({ hideSignOut }) {
     return (
-        <>
+        <div>
             <h1>InspoTarot</h1>
             <div className="links">
-                <Link subDir="privacy" linkText="Privacy Policy" />
                 <Link subDir="" linkText="About" />
+                <Link subDir="privacy" linkText="Privacy Policy" />
                 <Link subDir="disclaimer" linkText="Disclaimer" />
+                {!hideSignOut && <SignOut />}
             </div>
-        </>
+        </div>
     );
 }
 

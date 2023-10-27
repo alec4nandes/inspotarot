@@ -1,4 +1,4 @@
-const IS_DEVELOPMENT = true;
+const IS_DEVELOPMENT = false;
 
 async function streamOpenAiResponse({ cards, prompt, ref }) {
     try {
@@ -37,11 +37,10 @@ async function getStream({ data }) {
     return stream;
 }
 
-// TODO: create production key
 async function getOpenAiApiKey() {
     const apiRoot = IS_DEVELOPMENT
             ? "http://localhost:5000/inspotarot/us-central1"
-            : "TBD", // TODO: deploy and get root
+            : "https://us-central1-inspotarot.cloudfunctions.net",
         openAiApiKey = await (
             await fetch(`${apiRoot}/openai`, {
                 method: "POST",

@@ -43,6 +43,7 @@ button {
     box-shadow: var(--button-shadow);
     box-sizing: border-box;
     color: var(--accent-2);
+    font-size: 1em;
     font-weight: 700;
     padding: 5px 10px;
 }
@@ -51,6 +52,21 @@ button:hover {
     background-color: var(--highlight-color);
     color: var(--accent-6);
     cursor: pointer;
+}
+
+button.link-btn {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    color: var(--accent-7);
+    font-size: initial;
+    font-weight: 400;
+    padding: 0;
+    text-decoration: underline;
+}
+
+button.link-btn:hover {
+    color: var(--accent-5);
 }
 
 code {
@@ -74,9 +90,12 @@ img.reversed {
     margin: auto;
 }
 
-.links a {
+.links > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 1;
-    font-size: 0.85em;
+    font-size: 0.85em !important;
     padding: 3px 10px;
     text-transform: uppercase;
 }

@@ -20,7 +20,8 @@
         "eject": "react-scripts eject",
         "server": "firebase serve --only functions",
         "client": "firebase serve --only hosting",
-        "build-and-move": "rmdir /s /q \"deploy/app\" && npm run build && rename build app && move app deploy"
+        "build-and-move": "rmdir /s /q \"deploy/app\" && npm run build && rename build app && move app deploy",
+        "deploy": "deploy.bat"
     },
     "eslintConfig": {
         "extends": [

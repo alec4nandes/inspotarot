@@ -1,0 +1,45 @@
+@import "./colors-and-fonts.css";
+
+#portal,
+#unverified {
+    gap: 20px;
+    padding: 50px 15px;
+
+    &,
+    form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    form {
+        gap: 10px;
+
+        input {
+            appearance: none;
+            background-color: #fff;
+            border: 0;
+            border-bottom: 2px solid var(--accent-6);
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--accent-6);
+
+            &:-webkit-autofill {
+                transition: 60000s;
+            }
+        }
+
+        #user-options {
+            button {
+                flex: 1;
+            }
+        }
+    }
+
+    #user-options {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+}
