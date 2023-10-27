@@ -1,9 +1,11 @@
 import "../css/vibe.css";
+import Header from "./Header";
 
 export default function Vibe({ setVibe, setQuestion }) {
     return (
         <div id="vibe">
-            <h1>InspoTarot</h1>
+            <Header />
+            <br />
             <form id="vibe-form" onSubmit={handleFormSubmit}>
                 <p>I'm looking for...</p>
                 <div id="radio-inputs">

@@ -1,5 +1,6 @@
 {
     "name": "mood",
+    "homepage": "/app",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -17,7 +18,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "api": "firebase serve --only functions"
+        "server": "firebase serve --only functions",
+        "client": "firebase serve --only hosting",
+        "build-and-move": "rmdir /s /q \"deploy/app\" && npm run build && rename build app && move app deploy"
     },
     "eslintConfig": {
         "extends": [

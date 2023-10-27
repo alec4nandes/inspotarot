@@ -1,7 +1,9 @@
+import Header from "./Header";
+
 export default function GetReadings({ vibe, setShowReading }) {
     return (
         <div id="get-readings">
-            <h1>InspoTarot</h1>
+            <Header />
             <h2>Interesting choices... 😊</h2>
             <h3>Thanks for your input!</h3>
             <h4>Now let's consult these Tarot cards for some {vibe}:</h4>

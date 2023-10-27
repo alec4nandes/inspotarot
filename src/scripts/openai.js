@@ -15,12 +15,26 @@ async function streamOpenAiResponse({ cards, prompt, ref }) {
                 stream: true,
                 temperature: 0.7,
             },
-            openAiApiKey = await getOpenAiApiKey(),
-            stream = await getStream({ openAiApiKey, data });
+            stream = await getStream({ data });
         fetchStream({ cards, stream, ref });
     } catch (err) {
         console.error(err.message);
     }
+}
+
+async function getStream({ data }) {
+    const apiEndpoint = "https://api.openai.com/v1/chat/completions",
+        openAiApiKey = await getOpenAiApiKey(),
+        response = await fetch(apiEndpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${openAiApiKey}`,
+            },
+            body: JSON.stringify(data),
+        }),
+        stream = response.body;
+    return stream;
 }
 
 // TODO: create production key
@@ -35,20 +49,6 @@ async function getOpenAiApiKey() {
             })
         ).text();
     return openAiApiKey;
-}
-
-async function getStream({ openAiApiKey, data }) {
-    const apiEndpoint = "https://api.openai.com/v1/chat/completions",
-        response = await fetch(apiEndpoint, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${openAiApiKey}`,
-            },
-            body: JSON.stringify(data),
-        }),
-        stream = response.body;
-    return stream;
 }
 
 function fetchStream({ cards, stream, ref }) {
@@ -101,4 +101,4 @@ function parseDecoded(decoded, ref) {
     }
 }
 
-export { streamOpenAiResponse, getCardsId };
+export { streamOpenAiResponse, getCardsId, IS_DEVELOPMENT };

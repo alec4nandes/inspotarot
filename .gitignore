@@ -12,6 +12,7 @@ firebase-debug.log
 
 # production
 /build
+/deploy/app
 
 # misc
 .DS_Store

@@ -11,7 +11,10 @@ const IS_DEVELOPMENT = true,
 openAiServer.use(
     cors({
         origin: IS_DEVELOPMENT
-            ? ["http://localhost:3000"]
+            ? [
+                  "http://localhost:3000", // React testing
+                  "http://localhost:5002", // Firebase Hosting testing
+              ]
             : ["https://inspotarot.web.app"],
     })
 );
