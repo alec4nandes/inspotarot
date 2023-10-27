@@ -6,7 +6,18 @@ body,
 
 #root {
     box-sizing: border-box;
+}
+
+body,
+#root {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+}
+
+body main,
+#root main {
+    flex: 1;
 }
 
 main > div:not(#reading) {

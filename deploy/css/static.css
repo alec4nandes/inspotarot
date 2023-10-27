@@ -1,0 +1,10 @@
+@import "/app/css/colors-and-fonts.css";
+@import "/app/css/index.css";
+@import "/app/css/header.css";
+@import "/app/css/footer.css";
+main {
+  padding: 30px 15px 50px;
+}
+main > div {
+  padding: auto;
+}/*# sourceMappingURL=static.css.map */

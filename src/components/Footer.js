@@ -34,9 +34,6 @@ function Social() {
                     alt="Instagram logo"
                 />
             </a>
-            <a href="https://x.com/inspotarot" target="_blank" rel="noopener">
-                <img src="/app/assets/icons/social/x.png" alt="X logo" />
-            </a>
         </div>
     );
 }
