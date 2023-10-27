@@ -1,92 +1,98 @@
-@import "./colors-and-fonts.css";
-
-#vibe-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    button[type="submit"] {
-        max-width: 150px;
-        width: 100%;
-        margin: auto;
+#vibe {
+    h2 {
+        color: var(--accent-7);
+        margin-top: 0;
     }
 
-    p {
-        margin: 0;
-    }
-
-    #question {
-        height: 100px;
-        max-width: 300px;
-        width: 100%;
-        appearance: none;
-        background-color: #fff;
-        border: 1px solid var(--accent-6);
-        border-radius: 3px;
-        box-sizing: border-box;
-        color: var(--accent-6);
-        margin: auto;
-        font-size: 1.2em;
-        font-weight: 400;
-        padding: 5px 7px;
-
-        &::placeholder {
-            color: #999;
-        }
-    }
-
-    #radio-inputs {
-        --gap: 20px;
-
-        max-width: calc(400px + var(--gap));
+    #vibe-form {
         display: flex;
-        flex-wrap: wrap;
-        gap: var(--gap);
-        margin: auto;
+        flex-direction: column;
+        gap: 20px;
 
-        input[type="radio"] {
-            height: 200px;
-            width: calc(50% - (var(--gap) / 2));
-            appearance: none;
-            background-color: var(--accent-3);
-            border-radius: 20px;
-            box-shadow: var(--button-shadow);
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        button[type="submit"] {
+            max-width: 150px;
+            width: 100%;
+            margin: auto;
+        }
+
+        p {
             margin: 0;
-            padding: 0;
-            text-align: center;
+        }
 
-            &:hover {
-                cursor: pointer;
+        #question {
+            height: 100px;
+            max-width: 300px;
+            width: 100%;
+            appearance: none;
+            background-color: #fff;
+            border: 1px solid var(--accent-6);
+            border-radius: 3px;
+            box-sizing: border-box;
+            color: var(--accent-6);
+            margin: auto;
+            font-size: 1.2em;
+            font-weight: 400;
+            padding: 5px 7px;
+
+            &::placeholder {
+                color: #999;
             }
+        }
 
-            &:checked {
-                background-color: var(--highlight-color);
-                color: var(--text-pop);
-            }
+        #radio-inputs {
+            --gap: 20px;
 
-            &::before {
-                color: var(--accent-6);
-                font-size: 1.5rem;
-            }
+            max-width: calc(400px + var(--gap));
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap);
+            margin: auto;
 
-            &#advice::before {
-                content: "advice";
-            }
+            input[type="radio"] {
+                height: 200px;
+                width: calc(50% - (var(--gap) / 2));
+                appearance: none;
+                background-color: var(--accent-3);
+                border-radius: 20px;
+                box-shadow: var(--button-shadow);
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                text-align: center;
 
-            &#inspiration::before {
-                content: "inspiration";
-            }
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0 0 10px var(--accent-6);
+                }
 
-            &#self-discovery::before {
-                content: "self discovery";
-            }
+                &:checked {
+                    background-color: var(--highlight-color);
+                    color: var(--text-pop);
+                }
 
-            &#support::before {
-                content: "support";
+                &::before {
+                    color: var(--accent-6);
+                    font-size: 1.5rem;
+                }
+
+                &#advice::before {
+                    content: "advice";
+                }
+
+                &#inspiration::before {
+                    content: "inspiration";
+                }
+
+                &#self-discovery::before {
+                    content: "self discovery";
+                }
+
+                &#support::before {
+                    content: "support";
+                }
             }
         }
     }

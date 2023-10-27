@@ -1,8 +1,13 @@
-@import "./colors-and-fonts.css";
+#portal #tagline * {
+  color: var(--accent-6);
+  font-family: "Chubbo", sans-serif;
+  font-size: 1.35rem;
+  line-height: 0;
+}
+
 #portal,
 #unverified {
   gap: 20px;
-  padding: 50px 15px;
 }
 #portal,
 #portal form,

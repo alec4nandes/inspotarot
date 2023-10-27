@@ -1,0 +1,36 @@
+header {
+  background-color: var(--accent-3);
+}
+header h1 {
+  color: var(--accent-6);
+  margin: 0;
+  padding: 10px 15px;
+  text-shadow: var(--button-shadow);
+}
+header nav {
+  min-height: 40px;
+  width: 100%;
+  background-color: var(--accent-7);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 25px;
+}
+header nav,
+header nav a,
+header nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav a,
+header nav button.link-btn {
+  height: auto;
+  color: var(--accent-2);
+  font-size: 0.85em;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+header nav a:hover,
+header nav button.link-btn:hover {
+  color: var(--accent-4);
+}/*# sourceMappingURL=header.css.map */

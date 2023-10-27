@@ -4,7 +4,9 @@ import { getDifferentCardName } from "./Card/NotFeelingIt";
 import { auth } from "../scripts/database.js";
 import { onAuthStateChanged } from "firebase/auth";
 import Card from "./Card/Card";
+import Footer from "./Footer";
 import GetReadings from "./GetReadings";
+import Header from "./Header";
 import Portal, { Unverified } from "./Portal";
 import Reading from "./Reading/Reading";
 import Vibe from "./Vibe";
@@ -43,21 +45,27 @@ export default function App() {
         }
     }, []);
 
-    return loaded ? (
-        !user ? (
-            <Portal />
-        ) : !user.emailVerified ? (
-            <Unverified {...{ user }} />
-        ) : !vibe ? (
-            <Vibe {...{ setVibe, setQuestion }} />
-        ) : cards.length < 5 ? (
-            <Card {...{ cardName, cards, setCards }} />
-        ) : !showReading ? (
-            <GetReadings {...{ vibe, setShowReading }} />
-        ) : (
-            <Reading {...{ vibe, setVibe, question, cards }} />
+    return (
+        loaded && (
+            <>
+                {!showReading && <Header hideSignOut={!user} />}
+                <main id={showReading ? "main-reading" : ""}>
+                    {!user ? (
+                        <Portal />
+                    ) : !user.emailVerified ? (
+                        <Unverified {...{ user }} />
+                    ) : !vibe ? (
+                        <Vibe {...{ setVibe, setQuestion }} />
+                    ) : cards.length < 5 ? (
+                        <Card {...{ cardName, cards, setCards }} />
+                    ) : !showReading ? (
+                        <GetReadings {...{ vibe, setShowReading }} />
+                    ) : (
+                        <Reading {...{ vibe, setVibe, question, cards }} />
+                    )}
+                </main>
+                {!showReading && <Footer />}
+            </>
         )
-    ) : (
-        <></>
     );
 }

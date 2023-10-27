@@ -2,7 +2,6 @@ import "../../css/card.css";
 import { useEffect, useState } from "react";
 import { getCard } from "../../scripts/data.js";
 import CardImage from "../CardImage";
-import Header from "../Header";
 import NextCard from "./NextCard";
 import NotFeelingIt from "./NotFeelingIt";
 import WordButtons from "./WordButtons";
@@ -30,7 +29,6 @@ export default function Card({ cardName, cards, setCards }) {
 
     return (
         <div id="card">
-            <Header />
             <p>
                 Choose at least one word from 5 cards for your special reading.
             </p>

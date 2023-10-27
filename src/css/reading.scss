@@ -1,4 +1,7 @@
-@import "./colors-and-fonts.css";
+main#main-reading {
+    height: 100%;
+    width: 100%;
+}
 
 #reading {
     height: 100%;
@@ -34,7 +37,7 @@
             min-width: 100%;
             box-sizing: border-box;
             overflow-y: auto;
-            padding: 30px 15px 50px;
+            padding: 50px 15px;
             scroll-snap-align: start;
 
             .reading-section {

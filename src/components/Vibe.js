@@ -1,40 +1,45 @@
+import { useRef } from "react";
 import "../css/vibe.css";
-import Header from "./Header";
 
 export default function Vibe({ setVibe, setQuestion }) {
+    const questionRef = useRef();
+
     return (
         <div id="vibe">
-            <Header />
-            <br />
             <form id="vibe-form" onSubmit={handleFormSubmit}>
-                <p>I'm looking for...</p>
+                <h2>I'm looking for...</h2>
                 <div id="radio-inputs">
                     <input
                         name="vibe"
                         type="radio"
                         id="advice"
                         value="advice"
+                        onClick={jumpToQuestion}
                     />
                     <input
                         name="vibe"
                         type="radio"
                         id="inspiration"
                         value="inspiration"
+                        onClick={jumpToQuestion}
                     />
                     <input
                         name="vibe"
                         type="radio"
                         id="self-discovery"
                         value="self-discovery"
+                        onClick={jumpToQuestion}
                     />
                     <input
                         name="vibe"
                         type="radio"
                         id="support"
                         value="support"
+                        onClick={jumpToQuestion}
                     />
                 </div>
                 <textarea
+                    ref={questionRef}
                     id="question"
                     name="question"
                     placeholder="Ask a question (optional)..."
@@ -53,5 +58,9 @@ export default function Vibe({ setVibe, setQuestion }) {
         }
         setVibe(v);
         setQuestion(e.target.question.value.trim());
+    }
+
+    function jumpToQuestion() {
+        questionRef.current.scrollIntoView({ behavior: "smooth" });
     }
 }

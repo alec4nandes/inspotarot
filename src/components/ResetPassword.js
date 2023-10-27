@@ -5,7 +5,7 @@ export default function ResetPassword({ email }) {
     return (
         <button
             id="reset-pw-btn"
-            class="link-btn"
+            className="link-btn"
             onClick={() => handleResetPassword(email)}
         >
             reset password

@@ -1,5 +1,9 @@
-@import "./colors-and-fonts.css";
-.card {
+#card > p:first-child {
+  color: var(--accent-7);
+  font-weight: 700;
+  margin-top: 0;
+}
+#card .card {
   max-width: 400px;
   width: 100%;
   background-color: var(--accent-3);
@@ -10,63 +14,63 @@
   justify-content: space-between;
   margin: auto;
 }
-.card,
-.card * {
+#card .card,
+#card .card * {
   box-sizing: border-box;
 }
-.card,
-.card .card-bottom {
+#card .card,
+#card .card .card-bottom {
   gap: 10px;
 }
-.card .card-bottom {
+#card .card .card-bottom {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-.card .card-bottom .next-card,
-.card .card-bottom .not-feeling-it {
+#card .card .card-bottom .next-card,
+#card .card .card-bottom .not-feeling-it {
   width: 100%;
   display: flex;
   gap: 5px;
 }
-.card .card-bottom .next-card button,
-.card .card-bottom .not-feeling-it button {
+#card .card .card-bottom .next-card button,
+#card .card .card-bottom .not-feeling-it button {
   flex: 1;
 }
-.card .card-bottom .next-card button {
+#card .card .card-bottom .next-card button {
   border-radius: 0 0 20px 20px;
 }
-.card .card-bottom .not-feeling-it button:first-child {
+#card .card .card-bottom .not-feeling-it button:first-child {
   border-radius: 0 0 0 20px;
 }
-.card .card-bottom .not-feeling-it button:last-child {
+#card .card .card-bottom .not-feeling-it button:last-child {
   border-radius: 0 0 20px 0;
 }
-.card .card-image-container img {
+#card .card .card-image-container img {
   height: 200px;
 }
-.card .card-name,
-.card .card-number {
+#card .card .card-name,
+#card .card .card-number {
   font-weight: 700;
 }
-.card .card-name {
+#card .card .card-name {
   color: var(--accent-6);
   font-size: 1.4em;
 }
-.card .card-number {
+#card .card .card-number {
   background-color: var(--accent-7);
   border-radius: 20px 20px 0 0;
   color: var(--accent-2);
   padding: 10px;
 }
-.card p,
-.card .word-buttons {
+#card .card p,
+#card .card .word-buttons {
   margin: 0;
 }
-.card p {
+#card .card p {
   padding: 0 10px;
 }
-.card .word-buttons {
+#card .card .word-buttons {
   min-height: 240px;
   display: flex;
   flex: 1;
@@ -76,23 +80,22 @@
   list-style-type: none;
   padding: 0;
 }
-.card .word-buttons li {
+#card .card .word-buttons li {
   width: 100%;
 }
-.card .word-buttons li button {
+#card .card .word-buttons li button {
   width: 100%;
   background-color: var(--accent-4);
   color: var(--accent-7);
   font-size: 1.1em;
   font-weight: 700;
 }
-.card .word-buttons li button.picked {
+#card .card .word-buttons li button.picked {
   background-color: var(--highlight-color);
   color: var(--accent-6);
 }
-
 @media only screen and (max-width: 450px) {
-  .not-feeling-it button {
+  #card .not-feeling-it button {
     box-sizing: border-box;
     font-size: 0.8em !important;
     padding: 0;

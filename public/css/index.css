@@ -1,5 +1,3 @@
-@import "./colors-and-fonts.css";
-
 html,
 body,
 #root {
@@ -11,9 +9,8 @@ body,
     text-align: center;
 }
 
-#card,
-#vibe {
-    padding: 50px 15px;
+main > div:not(#reading) {
+    padding: 40px 15px 60px;
 }
 
 a {
@@ -74,30 +71,8 @@ code {
         monospace;
 }
 
-h1 {
-    color: var(--accent-6);
-    margin-top: 0;
-    text-shadow: var(--button-shadow);
-}
-
 img.reversed {
     transform: rotate(180deg);
-}
-
-.links {
-    max-width: 400px;
-    display: flex;
-    margin: auto;
-}
-
-.links > * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    font-size: 0.85em !important;
-    padding: 3px 10px;
-    text-transform: uppercase;
 }
 
 pre {

@@ -4,7 +4,6 @@ import { sendEmailVerification } from "firebase/auth";
 import { auth } from "../scripts/database.js";
 import { IS_DEVELOPMENT } from "../scripts/openai.js";
 import { handlePortal } from "../scripts/portal.js";
-import Header from "./Header";
 import ResetPassword from "./ResetPassword";
 
 export default function Portal() {
@@ -20,7 +19,13 @@ export default function Portal() {
 
     return (
         <div id="portal">
-            <Header hideSignOut={true} />
+            <h2 id="tagline">
+                <em>We don't know your future,</em>
+                <br />
+                <em>
+                    just your <u>potential</u>.
+                </em>
+            </h2>
             <form ref={formRef} onSubmit={(e) => e.preventDefault()}>
                 <input
                     name="email"
@@ -57,7 +62,6 @@ export default function Portal() {
 function Unverified({ user }) {
     return (
         <div id="unverified">
-            <Header />
             <p>
                 Please verify your email by clicking the link sent to{" "}
                 {user.email}

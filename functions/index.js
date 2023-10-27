@@ -5,7 +5,7 @@ const express = require("express"),
 
 // SECRET KEY
 
-const IS_DEVELOPMENT = false,
+const IS_DEVELOPMENT = true,
     openAiServer = express();
 
 openAiServer.use(

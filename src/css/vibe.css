@@ -1,18 +1,21 @@
-@import "./colors-and-fonts.css";
-#vibe-form {
+#vibe h2 {
+  color: var(--accent-7);
+  margin-top: 0;
+}
+#vibe #vibe-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-#vibe-form button[type=submit] {
+#vibe #vibe-form button[type=submit] {
   max-width: 150px;
   width: 100%;
   margin: auto;
 }
-#vibe-form p {
+#vibe #vibe-form p {
   margin: 0;
 }
-#vibe-form #question {
+#vibe #vibe-form #question {
   height: 100px;
   max-width: 300px;
   width: 100%;
@@ -29,13 +32,13 @@
   font-weight: 400;
   padding: 5px 7px;
 }
-#vibe-form #question::-moz-placeholder {
+#vibe #vibe-form #question::-moz-placeholder {
   color: #999;
 }
-#vibe-form #question::placeholder {
+#vibe #vibe-form #question::placeholder {
   color: #999;
 }
-#vibe-form #radio-inputs {
+#vibe #vibe-form #radio-inputs {
   --gap: 20px;
   max-width: calc(400px + var(--gap));
   display: flex;
@@ -43,7 +46,7 @@
   gap: var(--gap);
   margin: auto;
 }
-#vibe-form #radio-inputs input[type=radio] {
+#vibe #vibe-form #radio-inputs input[type=radio] {
   height: 200px;
   width: calc(50% - var(--gap) / 2);
   -webkit-appearance: none;
@@ -60,27 +63,28 @@
   padding: 0;
   text-align: center;
 }
-#vibe-form #radio-inputs input[type=radio]:hover {
+#vibe #vibe-form #radio-inputs input[type=radio]:hover {
   cursor: pointer;
+  box-shadow: 0 0 10px var(--accent-6);
 }
-#vibe-form #radio-inputs input[type=radio]:checked {
+#vibe #vibe-form #radio-inputs input[type=radio]:checked {
   background-color: var(--highlight-color);
   color: var(--text-pop);
 }
-#vibe-form #radio-inputs input[type=radio]::before {
+#vibe #vibe-form #radio-inputs input[type=radio]::before {
   color: var(--accent-6);
   font-size: 1.5rem;
 }
-#vibe-form #radio-inputs input[type=radio]#advice::before {
+#vibe #vibe-form #radio-inputs input[type=radio]#advice::before {
   content: "advice";
 }
-#vibe-form #radio-inputs input[type=radio]#inspiration::before {
+#vibe #vibe-form #radio-inputs input[type=radio]#inspiration::before {
   content: "inspiration";
 }
-#vibe-form #radio-inputs input[type=radio]#self-discovery::before {
+#vibe #vibe-form #radio-inputs input[type=radio]#self-discovery::before {
   content: "self discovery";
 }
-#vibe-form #radio-inputs input[type=radio]#support::before {
+#vibe #vibe-form #radio-inputs input[type=radio]#support::before {
   content: "support";
 }
 

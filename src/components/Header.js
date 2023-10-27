@@ -3,15 +3,15 @@ import SignOut from "./SignOut.js";
 
 export default function Header({ hideSignOut }) {
     return (
-        <div>
+        <header>
             <h1>InspoTarot</h1>
-            <div className="links">
+            <nav>
                 <Link subDir="" linkText="About" />
                 <Link subDir="privacy" linkText="Privacy Policy" />
                 <Link subDir="disclaimer" linkText="Disclaimer" />
                 {!hideSignOut && <SignOut />}
-            </div>
-        </div>
+            </nav>
+        </header>
     );
 }
 
