@@ -4,7 +4,9 @@ export default function Footer() {
             <Social />
             <p id="contact">
                 For any questions or concerns, please contact{" "}
-                <a href="mailto:al@fern.haus">al@fern.haus</a>
+                <a href="mailto:inspotarotapp@gmail.com">
+                    inspotarotapp@gmail.com
+                </a>
             </p>
             <p id="copyright">&copy; Alec Fernandes 2023</p>
         </footer>
@@ -33,6 +35,13 @@ function Social() {
                     src="/app/assets/icons/social/instagram.png"
                     alt="Instagram logo"
                 />
+            </a>
+            <a
+                href="https://x.com/inspotarotapp"
+                target="_blank"
+                rel="noopener"
+            >
+                <img src="/app/assets/icons/social/x.png" alt="X logo" />
             </a>
         </div>
     );
