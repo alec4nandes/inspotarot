@@ -8,7 +8,7 @@ export default function Footer() {
                     inspotarotapp@gmail.com
                 </a>
             </p>
-            <p id="copyright">&copy; Alec Fernandes 2023</p>
+            <p id="copyright">&copy; InspoTarot 2023</p>
         </footer>
     );
 }
