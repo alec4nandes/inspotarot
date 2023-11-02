@@ -10,9 +10,13 @@ import Header from "./Header";
 import Portal, { Unverified } from "./Portal";
 import Reading from "./Reading/Reading";
 import Vibe from "./Vibe";
+import AgeLocationVerify from "./AgeLocationVerify";
+
+const cookieKey = "age_location_verified";
 
 export default function App() {
     const [loaded, setLoaded] = useState(false),
+        [hasAgeCookie, setHasAgeCookie] = useState(false),
         [user, setUser] = useState(),
         [vibe, setVibe] = useState(),
         [question, setQuestion] = useState(),
@@ -32,6 +36,30 @@ export default function App() {
         window.scrollTo({ top: 0 });
     }, [cards]);
 
+    // VERIFY AGE AND LOCATION
+    useEffect(() => {
+        // check cookie
+        const cookieData = parseCookie(document.cookie),
+            userVerified = !!+cookieData[cookieKey];
+        userVerified && setHasAgeCookie(true);
+        console.log("user verified:", userVerified);
+
+        // https://www.geekstrick.com/snippets/how-to-parse-cookies-in-javascript/
+        // cookie in browser: `pkg=math; equation=E%3Dmc%5E2`
+        // parsed: { pkg: 'math', equation: 'E=mc^2' }
+        function parseCookie(str) {
+            return str
+                .split(";")
+                .map((v) => v.split("="))
+                .reduce((acc, v) => {
+                    acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(
+                        v[1]?.trim()
+                    );
+                    return acc;
+                }, {});
+        }
+    }, []);
+
     // CHECK USER LOGIN STATUS
     useEffect(() => {
         onAuthStateChanged(auth, async (user) => {
@@ -46,7 +74,10 @@ export default function App() {
     }, []);
 
     return (
-        loaded && (
+        loaded &&
+        (!hasAgeCookie ? (
+            <AgeLocationVerify {...{ cookieKey, setHasAgeCookie }} />
+        ) : (
             <>
                 {!showReading && <Header hideSignOut={!user} />}
                 <main id={showReading ? "main-reading" : ""}>
@@ -66,6 +97,6 @@ export default function App() {
                 </main>
                 {!showReading && <Footer />}
             </>
-        )
+        ))
     );
 }

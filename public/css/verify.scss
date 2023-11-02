@@ -1,0 +1,42 @@
+#verify-age-location {
+    color: var(--accent-2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    #verify-container {
+        min-height: 100%;
+        background-color: rgba(10, 10, 10, 0.95);
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 35px;
+        overflow: auto;
+        padding: 50px 15px;
+        text-align: center;
+
+        h1,
+        p {
+            margin: 0;
+        }
+
+        h1 {
+            color: var(--accent-4);
+            text-shadow: var(--button-shadow);
+        }
+
+        p {
+            max-width: 500px;
+        }
+
+        #verify-buttons {
+            display: flex;
+            gap: 20px;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+#verify-age-location {
+  color: var(--accent-2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+#verify-age-location #verify-container {
+  min-height: 100%;
+  background-color: rgba(10, 10, 10, 0.95);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 35px;
+  overflow: auto;
+  padding: 50px 15px;
+  text-align: center;
+}
+#verify-age-location #verify-container h1,
+#verify-age-location #verify-container p {
+  margin: 0;
+}
+#verify-age-location #verify-container h1 {
+  color: var(--accent-4);
+  text-shadow: var(--button-shadow);
+}
+#verify-age-location #verify-container p {
+  max-width: 500px;
+}
+#verify-age-location #verify-container #verify-buttons {
+  display: flex;
+  gap: 20px;
+}/*# sourceMappingURL=verify.css.map */

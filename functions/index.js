@@ -5,7 +5,7 @@ const express = require("express"),
 
 // SECRET KEY
 
-const IS_DEVELOPMENT = false,
+const IS_DEVELOPMENT = true,
     openAiServer = express();
 
 openAiServer.use(
@@ -15,7 +15,7 @@ openAiServer.use(
                   "http://localhost:3000", // React testing
                   "http://localhost:5002", // Firebase Hosting testing
               ]
-            : ["https://inspotarot.web.app"],
+            : ["https://inspotarot.com"],
     })
 );
 
