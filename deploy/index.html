@@ -15,6 +15,25 @@
         <link rel="stylesheet" href="/css/static.css">
     </head>
     <body>
+        <div id="verify-age-location">
+            <div id="verify-container">
+                <h1>InspoTarot</h1>
+                <p>
+                    This website is restricted to people aged 18+ and residing
+                    in areas where Tarot card reading and related activities are
+                    not illegal. By clicking “Enter” you are agreeing to these
+                    terms.
+                </p>
+                <div id="verify-buttons">
+                    <button id="enter-btn" class="standard-btn">
+                        ENTER
+                    </button>
+                    <button class="standard-btn" onclick="window.location.href='https://google.com'">
+                        LEAVE
+                    </button>
+                </div>
+            </div>
+        </div>
         <header>
             <h1>InspoTarot</h1>
             <nav>
@@ -60,5 +79,7 @@
             </p>
             <p id="copyright">&copy; InspoTarot 2023</p>
         </footer>
+
+        <script src="/scripts/verify-age-location.js"></script>
     </body>
 </html>
