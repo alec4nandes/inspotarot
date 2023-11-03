@@ -1,4 +1,4 @@
-@import url("https://api.fontshare.com/v2/css?f[]=supreme@400&f[]=chubbo@700&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=supreme@400,401,700,701&f[]=chubbo@700&display=swap");
 
 :root {
     --accent-1: #f1f1ff;

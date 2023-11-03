@@ -4,8 +4,45 @@
 @import "/app/css/footer.css";
 @import "/app/css/verify.css";
 main {
-  padding: 30px 15px 50px;
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 15px 60px;
 }
 main > div {
   padding: auto;
+}
+main a {
+  font-weight: 700;
+}
+main h2 {
+  color: var(--accent-6);
+  font-family: "Chubbo", sans-serif;
+}
+main hr {
+  height: 1.8px;
+  max-width: 400px;
+  background-color: var(--accent-5);
+  border: 0;
+  margin: 35px auto;
+}
+main img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  margin: 50px auto;
+}
+main img#screenshot-1 {
+  margin: 35px auto;
+}
+main ul {
+  max-width: 475px;
+  background-color: var(--accent-3);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: var(--accent-7);
+  font-style: italic;
+  margin: 25px auto;
+  padding: 20px 20px 20px 35px;
+  text-align: left;
 }/*# sourceMappingURL=static.css.map */

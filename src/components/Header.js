@@ -7,7 +7,10 @@ export default function Header({ hideSignOut }) {
 
     return (
         <header>
-            <h1>InspoTarot</h1>
+            <div>
+                <img id="logo" src="/app/assets\logo.png" />
+                <h1>InspoTarot</h1>
+            </div>
             <nav>
                 <a href={`${getFirebaseHost()}/`}>About</a>
                 <a href={`${getFirebaseHost()}/privacy`}>Privacy Policy</a>
