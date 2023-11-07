@@ -17,7 +17,9 @@ export default function Surface({ card, vibe, question, cards }) {
                     </div>
                     <p className="your-words">
                         <em>
-                            <strong>your words:</strong>{" "}
+                            <strong>
+                                You were consciously drawn to these words:
+                            </strong>{" "}
                             {card.picked.join(", ")}
                         </em>
                     </p>

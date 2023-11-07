@@ -8,7 +8,7 @@ import {
 import Matching from "./Matching.js";
 import Opposites from "./Opposites.js";
 
-export default function Beneath({ card, cards, vibe, question }) {
+export default function Beneath({ card, cards, vibe, question, pickedWords }) {
     const ref = useRef(),
         { matching, opposites } = compareCards(cards),
         compare = getRelations({ card, matching, opposites });
@@ -17,9 +17,13 @@ export default function Beneath({ card, cards, vibe, question }) {
         <div className="beneath">
             <p>Beneath the Surface</p>
             <p>
-                <em>
-                    <strong>all words:</strong> {card.words.join(", ")}
-                </em>
+                These words are also attached to this card, lurking in your
+                psychological shadow:
+            </p>
+            <p>
+                <strong>
+                    <em>{getShadowWords()}</em>
+                </strong>
             </p>
             <div className="compare">
                 <Matching matching={compare.matching} />
@@ -40,6 +44,11 @@ export default function Beneath({ card, cards, vibe, question }) {
             question,
         });
         streamOpenAiResponse({ cards, prompt, ref });
+    }
+
+    function getShadowWords() {
+        const { picked, words } = cards.find(({ name }) => name === card.name);
+        return words.filter((word) => !picked.includes(word)).join(", ");
     }
 }
 

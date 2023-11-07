@@ -2,7 +2,7 @@ const IS_DEVELOPMENT = false;
 
 async function streamOpenAiResponse({ cards, prompt, ref }) {
     try {
-        ref.current && (ref.current.innerHTML = "");
+        ref.current && (ref.current.textContent = "Getting reading...");
         const systemContent =
                 "You are a wise yet friendly Tarot card reader " +
                 "explaining my cards in an intimate setting.",
@@ -18,6 +18,7 @@ async function streamOpenAiResponse({ cards, prompt, ref }) {
             stream = await getStream({ data });
         fetchStream({ cards, stream, ref });
     } catch (err) {
+        ref.current.textContent = err.message;
         console.error(err.message);
     }
 }
@@ -51,6 +52,7 @@ async function getOpenAiApiKey() {
 }
 
 function fetchStream({ cards, stream, ref }) {
+    ref.current && (ref.current.textContent = "");
     const reader = stream.getReader();
     // read() returns a promise that fulfills
     // when a value has been received
