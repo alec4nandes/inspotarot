@@ -1,4 +1,4 @@
-const IS_DEVELOPMENT = true;
+const IS_DEVELOPMENT = false;
 
 async function streamOpenAiResponse({ uuid, prompt, ref }) {
     try {

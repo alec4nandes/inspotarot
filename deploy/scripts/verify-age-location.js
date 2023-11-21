@@ -6,7 +6,7 @@ const cookieKey = "age_location_verified",
 
 // handle Enter
 document.querySelector("#enter-btn").onclick = () => {
-    const IS_DEVELOPMENT = true;
+    const IS_DEVELOPMENT = false;
     // add age & location verification cookie
     document.cookie = `${cookieKey}=1;path=/${
         IS_DEVELOPMENT ? "" : ";domain=inspotarot.com"
