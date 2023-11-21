@@ -1,4 +1,5 @@
 import "../../css/reading.css";
+import { VibeHeading } from "../Card/Card";
 import SingleCard from "./SingleCard/SingleCard";
 import Summary from "./Summary";
 
@@ -38,6 +39,8 @@ export default function Reading({ vibe, setVibe, question, cards }) {
                         className="slide"
                         key={`single-card-${card.name}`}
                     >
+                        <VibeHeading {...{ vibe, question }} />
+                        <br />
                         <SingleCard
                             {...{
                                 card,

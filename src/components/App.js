@@ -88,7 +88,9 @@ export default function App() {
                     ) : !vibe ? (
                         <Vibe {...{ setVibe, setQuestion }} />
                     ) : cards.length < 5 ? (
-                        <Card {...{ cardName, cards, setCards }} />
+                        <Card
+                            {...{ cardName, cards, setCards, vibe, question }}
+                        />
                     ) : !showReading ? (
                         <GetReadings {...{ vibe, setShowReading }} />
                     ) : (

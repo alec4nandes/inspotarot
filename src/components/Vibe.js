@@ -43,6 +43,7 @@ export default function Vibe({ setVibe, setQuestion }) {
                     id="question"
                     name="question"
                     placeholder="Ask a question (optional)..."
+                    maxLength="200"
                 ></textarea>
                 <button type="submit">NEXT</button>
             </form>

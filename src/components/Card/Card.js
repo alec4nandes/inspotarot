@@ -10,7 +10,7 @@ import NextCard from "./NextCard";
 import NotFeelingIt from "./NotFeelingIt";
 import WordButtons from "./WordButtons";
 
-export default function Card({ cardName, cards, setCards }) {
+export default function Card({ cardName, cards, setCards, vibe, question }) {
     const [card, setCard] = useState(),
         [allWords, setAllWords] = useState([]),
         [shownWords, setShownWords] = useState([]),
@@ -31,6 +31,7 @@ export default function Card({ cardName, cards, setCards }) {
 
     return (
         <div id="card">
+            <VibeHeading {...{ vibe, question }} />
             <p>
                 Choose at least one word from 5 cards for your special reading.
             </p>
@@ -92,4 +93,13 @@ function getRangeOfWords(allWords, setShownWords, start, length = 5) {
     words.length && setShownWords(words);
 }
 
-export { getDifferentCardName, getRangeOfWords };
+function VibeHeading({ vibe, question }) {
+    return (
+        <p className="vibe-heading">
+            You are looking for {vibe}
+            {question ? ` and asked: "${question}"` : "."}
+        </p>
+    );
+}
+
+export { getDifferentCardName, getRangeOfWords, VibeHeading };

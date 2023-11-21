@@ -1,8 +1,9 @@
-#card > p:first-child {
+.vibe-heading {
   color: var(--accent-7);
   font-weight: 700;
   margin-top: 0;
 }
+
 #card .card {
   max-width: 400px;
   width: 100%;
