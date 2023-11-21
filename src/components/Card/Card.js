@@ -1,6 +1,10 @@
 import "../../css/card.css";
 import { useEffect, useState } from "react";
-import { getCard } from "../../scripts/data.js";
+import {
+    getCard,
+    getRandomCardName,
+    getUprightCardName,
+} from "../../scripts/data.js";
 import CardImage from "../CardImage";
 import NextCard from "./NextCard";
 import NotFeelingIt from "./NotFeelingIt";
@@ -9,8 +13,8 @@ import WordButtons from "./WordButtons";
 export default function Card({ cardName, cards, setCards }) {
     const [card, setCard] = useState(),
         [allWords, setAllWords] = useState([]),
-        [shownWords, setShownWords] = useState(),
-        [picked, setPicked] = useState();
+        [shownWords, setShownWords] = useState([]),
+        [picked, setPicked] = useState([]);
 
     useEffect(() => {
         setCard(getCard(cardName));
@@ -22,9 +26,7 @@ export default function Card({ cardName, cards, setCards }) {
     }, [card]);
 
     useEffect(() => {
-        setShownWords(
-            [...allWords].sort(() => 0.5 - Math.random()).slice(0, 5)
-        );
+        getRangeOfWords(allWords, setShownWords, 0);
     }, [allWords]);
 
     return (
@@ -47,15 +49,25 @@ export default function Card({ cardName, cards, setCards }) {
                     <WordButtons {...{ shownWords, picked, setPicked }} />
                     <div className="card-bottom">
                         {picked.length ? (
-                            <NextCard {...{ cards, setCards, card, picked }} />
+                            <NextCard
+                                {...{
+                                    cards,
+                                    setCards,
+                                    card,
+                                    picked,
+                                    allWords,
+                                    shownWords,
+                                    setShownWords,
+                                }}
+                            />
                         ) : (
                             <NotFeelingIt
                                 {...{
                                     allWords,
-                                    setAllWords,
+                                    cards,
                                     setCard,
                                     shownWords,
-                                    cards,
+                                    setShownWords,
                                 }}
                             />
                         )}
@@ -65,3 +77,19 @@ export default function Card({ cardName, cards, setCards }) {
         </div>
     );
 }
+
+function getDifferentCardName(cards) {
+    const drawn = cards.map(({ name }) => getUprightCardName(name));
+    let randomCardName = getRandomCardName();
+    while (drawn.includes(getUprightCardName(randomCardName))) {
+        randomCardName = getRandomCardName();
+    }
+    return randomCardName;
+}
+
+function getRangeOfWords(allWords, setShownWords, start, length = 5) {
+    const words = allWords.slice(start, start + length);
+    words.length && setShownWords(words);
+}
+
+export { getDifferentCardName, getRangeOfWords };

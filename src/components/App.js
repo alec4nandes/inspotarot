@@ -1,6 +1,6 @@
 import "../css/get-readings.css";
 import { useEffect, useState } from "react";
-import { getDifferentCardName } from "./Card/NotFeelingIt";
+import { getDifferentCardName } from "./Card/Card";
 import { auth } from "../scripts/database.js";
 import { onAuthStateChanged } from "firebase/auth";
 import Card from "./Card/Card";

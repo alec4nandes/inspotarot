@@ -31,25 +31,15 @@
             flex-direction: column;
             justify-content: flex-end;
 
-            .next-card,
-            .not-feeling-it {
+            .card-buttons {
                 width: 100%;
                 display: flex;
                 gap: 5px;
 
                 button {
                     flex: 1;
-                }
-            }
+                    font-size: 0.8rem;
 
-            .next-card {
-                button {
-                    border-radius: 0 0 20px 20px;
-                }
-            }
-
-            .not-feeling-it {
-                button {
                     &:first-child {
                         border-radius: 0 0 0 20px;
                     }

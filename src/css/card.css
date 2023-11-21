@@ -27,23 +27,19 @@
   flex-direction: column;
   justify-content: flex-end;
 }
-#card .card .card-bottom .next-card,
-#card .card .card-bottom .not-feeling-it {
+#card .card .card-bottom .card-buttons {
   width: 100%;
   display: flex;
   gap: 5px;
 }
-#card .card .card-bottom .next-card button,
-#card .card .card-bottom .not-feeling-it button {
+#card .card .card-bottom .card-buttons button {
   flex: 1;
+  font-size: 0.8rem;
 }
-#card .card .card-bottom .next-card button {
-  border-radius: 0 0 20px 20px;
-}
-#card .card .card-bottom .not-feeling-it button:first-child {
+#card .card .card-bottom .card-buttons button:first-child {
   border-radius: 0 0 0 20px;
 }
-#card .card .card-bottom .not-feeling-it button:last-child {
+#card .card .card-bottom .card-buttons button:last-child {
   border-radius: 0 0 20px 0;
 }
 #card .card .card-image-container img {
