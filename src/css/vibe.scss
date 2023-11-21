@@ -65,12 +65,12 @@
 
                 &:hover {
                     cursor: pointer;
+                    background-color: var(--highlight-color);
                     box-shadow: 0 0 10px var(--accent-6);
                 }
 
                 &:checked {
                     background-color: var(--highlight-color);
-                    color: var(--text-pop);
                 }
 
                 &::before {

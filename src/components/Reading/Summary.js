@@ -4,7 +4,7 @@ import {
     getSummarySurfacePrompt,
 } from "../../scripts/prompts.js";
 import { getPatterns } from "../../scripts/patterns.js";
-import { streamOpenAiResponse, getCardsId } from "../../scripts/openai.js";
+import { streamOpenAiResponse } from "../../scripts/openai.js";
 import CardImage from "../CardImage";
 
 export default function Summary({ cards, vibe, question }) {
@@ -34,10 +34,11 @@ export default function Summary({ cards, vibe, question }) {
     );
 
     function AiResponse({ isSurface }) {
-        const ref = useRef();
+        const ref = useRef(),
+            uuid = crypto.randomUUID();
 
         return (
-            <p ref={ref} id={getCardsId(cards)}>
+            <p ref={ref} data-id={uuid}>
                 <button onClick={handleGetReading}>GET READING</button>
             </p>
         );
@@ -47,7 +48,7 @@ export default function Summary({ cards, vibe, question }) {
                 ? getSummarySurfacePrompt({ cards, vibe, question })
                 : getSummaryBeneathPrompt(patterns);
             streamOpenAiResponse({
-                cards,
+                uuid,
                 prompt,
                 ref,
             });

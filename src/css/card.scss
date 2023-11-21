@@ -8,7 +8,7 @@
     .card {
         max-width: 400px;
         width: 100%;
-        background-color: var(--accent-3);
+        background-color: var(--accent-4);
         border-radius: 20px;
         box-shadow: var(--box-shadow);
         display: flex;
@@ -63,7 +63,7 @@
         }
 
         .card-name {
-            color: var(--accent-6);
+            color: var(--accent-7);
             font-size: 1.4em;
         }
 
@@ -98,14 +98,19 @@
 
                 button {
                     width: 100%;
-                    background-color: var(--accent-4);
-                    color: var(--accent-7);
+                    background-color: var(--accent-3);
+                    border: 0;
+                    color: var(--accent-6);
                     font-size: 1.1em;
                     font-weight: 700;
 
+                    &:hover {
+                        background-color: var(--accent-1);
+                        box-shadow: 0 0 10px var(--accent-6);
+                    }
+
                     &.picked {
                         background-color: var(--highlight-color);
-                        color: var(--accent-6);
                     }
                 }
             }

@@ -7,7 +7,7 @@
 #card .card {
   max-width: 400px;
   width: 100%;
-  background-color: var(--accent-3);
+  background-color: var(--accent-4);
   border-radius: 20px;
   box-shadow: var(--box-shadow);
   display: flex;
@@ -51,7 +51,7 @@
   font-weight: 700;
 }
 #card .card .card-name {
-  color: var(--accent-6);
+  color: var(--accent-7);
   font-size: 1.4em;
 }
 #card .card .card-number {
@@ -82,14 +82,18 @@
 }
 #card .card .word-buttons li button {
   width: 100%;
-  background-color: var(--accent-4);
-  color: var(--accent-7);
+  background-color: var(--accent-3);
+  border: 0;
+  color: var(--accent-6);
   font-size: 1.1em;
   font-weight: 700;
 }
+#card .card .word-buttons li button:hover {
+  background-color: var(--accent-1);
+  box-shadow: 0 0 10px var(--accent-6);
+}
 #card .card .word-buttons li button.picked {
   background-color: var(--highlight-color);
-  color: var(--accent-6);
 }
 @media only screen and (max-width: 450px) {
   #card .not-feeling-it button {

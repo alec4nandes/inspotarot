@@ -1,6 +1,6 @@
 const IS_DEVELOPMENT = true;
 
-async function streamOpenAiResponse({ cards, prompt, ref }) {
+async function streamOpenAiResponse({ uuid, prompt, ref }) {
     try {
         ref.current && (ref.current.textContent = "Getting reading...");
         const systemContent =
@@ -16,7 +16,7 @@ async function streamOpenAiResponse({ cards, prompt, ref }) {
                 temperature: 0.7,
             },
             stream = await getStream({ data });
-        fetchStream({ cards, stream, ref });
+        fetchStream({ uuid, stream, ref });
     } catch (err) {
         ref.current.textContent = err.message;
         console.error(err.message);
@@ -51,7 +51,7 @@ async function getOpenAiApiKey() {
     return openAiApiKey;
 }
 
-function fetchStream({ cards, stream, ref }) {
+function fetchStream({ uuid, stream, ref }) {
     ref.current && (ref.current.textContent = "");
     const reader = stream.getReader();
     // read() returns a promise that fulfills
@@ -60,7 +60,7 @@ function fetchStream({ cards, stream, ref }) {
         // Result objects contain two properties:
         // done  - true if the stream has already given you all its data.
         // value - some data. Always undefined when done is true.
-        if (ref?.current?.id === getCardsId(cards)) {
+        if (ref?.current?.dataset.id === uuid) {
             // check current id against cards. Sometimes a user might select a
             // new custom spread before the old one finishes reading.
             if (done) {
@@ -75,12 +75,6 @@ function fetchStream({ cards, stream, ref }) {
             return;
         }
     });
-}
-
-function getCardsId(cards) {
-    return cards
-        .map(({ name }) => name.toLowerCase().replaceAll(" ", "-"))
-        .join("_");
 }
 
 function parseDecoded(decoded, ref) {
@@ -102,4 +96,4 @@ function parseDecoded(decoded, ref) {
     }
 }
 
-export { streamOpenAiResponse, getCardsId, IS_DEVELOPMENT };
+export { streamOpenAiResponse, IS_DEVELOPMENT };

@@ -1,17 +1,15 @@
 import { useRef } from "react";
 import { compareCards } from "../../../../scripts/compare.js";
 import { getCardBeneathPrompt } from "../../../../scripts/prompts.js";
-import {
-    streamOpenAiResponse,
-    getCardsId,
-} from "../../../../scripts/openai.js";
+import { streamOpenAiResponse } from "../../../../scripts/openai.js";
 import Matching from "./Matching.js";
 import Opposites from "./Opposites.js";
 
-export default function Beneath({ card, cards, vibe, question, pickedWords }) {
+export default function Beneath({ card, cards, vibe, question }) {
     const ref = useRef(),
         { matching, opposites } = compareCards(cards),
-        compare = getRelations({ card, matching, opposites });
+        compare = getRelations({ card, matching, opposites }),
+        uuid = crypto.randomUUID();
 
     return (
         <div className="beneath">
@@ -29,7 +27,7 @@ export default function Beneath({ card, cards, vibe, question, pickedWords }) {
                 <Matching matching={compare.matching} />
                 <Opposites opposites={compare.opposites} />
             </div>
-            <p ref={ref} id={getCardsId(cards)}>
+            <p ref={ref} data-id={uuid}>
                 <button onClick={handleGetReading}>GET READING</button>
             </p>
         </div>
@@ -43,7 +41,7 @@ export default function Beneath({ card, cards, vibe, question, pickedWords }) {
             vibe,
             question,
         });
-        streamOpenAiResponse({ cards, prompt, ref });
+        streamOpenAiResponse({ uuid, prompt, ref });
     }
 
     function getShadowWords() {
