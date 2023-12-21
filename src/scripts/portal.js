@@ -36,7 +36,7 @@ async function handleSignUp(e, setErrorMessage, formRef) {
         await sendEmailVerification(user, {
             url: IS_DEVELOPMENT
                 ? "http://localhost:3000/app"
-                : "https://inspotarot.com/app",
+                : "https://inspotarot.web.app/app",
         });
     } catch (error) {
         errorHelper(error, setErrorMessage);

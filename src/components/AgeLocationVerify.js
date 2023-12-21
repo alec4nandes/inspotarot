@@ -17,7 +17,7 @@ export default function AgeLocationVerify({ cookieKey, setHasAgeCookie }) {
                         onClick={() => {
                             // add age & location verification cookie
                             document.cookie = `${cookieKey}=1;path=/${
-                                IS_DEVELOPMENT ? "" : ";domain=inspotarot.com"
+                                IS_DEVELOPMENT ? "" : ";domain=inspotarot.web.app"
                             }`;
                             setHasAgeCookie(true);
                         }}

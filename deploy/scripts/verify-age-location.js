@@ -9,7 +9,7 @@ document.querySelector("#enter-btn").onclick = () => {
     const IS_DEVELOPMENT = false;
     // add age & location verification cookie
     document.cookie = `${cookieKey}=1;path=/${
-        IS_DEVELOPMENT ? "" : ";domain=inspotarot.com"
+        IS_DEVELOPMENT ? "" : ";domain=inspotarot.web.app"
     }`;
     hideVerifyScreen();
 };
