@@ -3,55 +3,49 @@ const IS_DEVELOPMENT = false;
 async function streamOpenAiResponse({ uuid, prompt, ref }) {
     try {
         ref.current && (ref.current.textContent = "Getting reading...");
-        const systemContent =
-                "You are a wise yet friendly Tarot card reader " +
-                "explaining my cards in an intimate setting.",
-            data = {
-                model: "gpt-3.5-turbo",
-                messages: [
-                    { role: "system", content: systemContent },
-                    { role: "user", content: prompt },
-                ],
-                stream: true,
-                temperature: 0.7,
-            },
-            stream = await getStream({ data });
-        fetchStream({ uuid, stream, ref });
+        const data = getData(prompt),
+            stream = await fetchStream(data);
+        readStream({ uuid, stream, ref });
     } catch (err) {
         ref.current.textContent = err.message;
         console.error(err.message);
     }
 }
 
-async function getStream({ data }) {
-    const apiEndpoint = "https://api.openai.com/v1/chat/completions",
-        openAiApiKey = await getOpenAiApiKey(),
-        response = await fetch(apiEndpoint, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${openAiApiKey}`,
+function getData(prompt) {
+    const systemContent =
+        "You are a wise yet friendly Tarot card reader " +
+        "explaining my cards in an intimate setting.";
+    return {
+        model: "gpt-3.5-turbo",
+        messages: [
+            {
+                role: "system",
+                content: systemContent,
             },
+            {
+                role: "user",
+                content: prompt,
+            },
+        ],
+        temperature: 0.7,
+        apiKeyName: "OPENAI_API_KEY_TAROT",
+    };
+}
+
+async function fetchStream(data) {
+    const response = await fetch(
+        "https://uf663xchsyh44bikbn723q7ewq0xqoaz.lambda-url.us-east-2.on.aws/",
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
-        }),
-        stream = response.body;
-    return stream;
+        }
+    );
+    return response.body;
 }
 
-async function getOpenAiApiKey() {
-    const apiRoot = IS_DEVELOPMENT
-            ? "http://localhost:5000/inspotarot/us-central1"
-            : "https://us-central1-inspotarot.cloudfunctions.net",
-        openAiApiKey = await (
-            await fetch(`${apiRoot}/openai`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-            })
-        ).text();
-    return openAiApiKey;
-}
-
-function fetchStream({ uuid, stream, ref }) {
+function readStream({ uuid, stream, ref }) {
     ref.current && (ref.current.textContent = "");
     const reader = stream.getReader();
     // read() returns a promise that fulfills
@@ -67,7 +61,7 @@ function fetchStream({ uuid, stream, ref }) {
                 console.log("Stream complete!");
             } else {
                 const decoded = new TextDecoder().decode(value);
-                parseDecoded(decoded, ref);
+                ref.current.textContent += decoded;
             }
             // Read some more, and call this function again
             return !done && reader.read().then(processText);
@@ -75,25 +69,6 @@ function fetchStream({ uuid, stream, ref }) {
             return;
         }
     });
-}
-
-function parseDecoded(decoded, ref) {
-    const data = decoded
-        .split("data:")
-        .map((line) => line.trim())
-        .filter(Boolean)
-        .map((line) => {
-            try {
-                return JSON.parse(line);
-            } catch (err) {
-                console.warn(line);
-                return "";
-            }
-        });
-    for (const piece of data) {
-        const chunk = piece?.choices?.[0]?.delta?.content;
-        ref.current.innerHTML += chunk || "";
-    }
 }
 
 export { streamOpenAiResponse, IS_DEVELOPMENT };
