@@ -4,8 +4,8 @@ export default function Footer() {
             <Social />
             <p id="contact">
                 For any questions or concerns, please contact{" "}
-                <a href="mailto:inspotarotapp@gmail.com">
-                    inspotarotapp@gmail.com
+                <a href="mailto:al@fern.haus">
+                    al@fern.haus
                 </a>
             </p>
             <p id="copyright">&copy; InspoTarot 2023</p>

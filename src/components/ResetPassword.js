@@ -27,7 +27,7 @@ export default function ResetPassword({ email }) {
                     ? "No user with that email."
                     : err.code === "auth/invalid-email"
                     ? "Please enter a valid email."
-                    : "Could not send password reset email right now. Please try again, and contact inspotarotapp@gmail.com if the problem persists."
+                    : "Could not send password reset email right now. Please try again, and contact al@fern.haus if the problem persists."
             );
         }
     }

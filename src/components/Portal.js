@@ -92,7 +92,7 @@ function Unverified({ user }) {
             } catch (err) {
                 console.error(err);
                 alert(
-                    "Could not send email. Please try again and contact inspotarotapp@gmail.com if problem persists."
+                    "Could not send email. Please try again and contact al@fern.haus if problem persists."
                 );
             }
         }
