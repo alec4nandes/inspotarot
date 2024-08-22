@@ -1,9 +1,11 @@
+import { auth } from "./database";
+
 const IS_DEVELOPMENT = false;
 
 async function streamOpenAiResponse({ uuid, prompt, ref }) {
     try {
         ref.current && (ref.current.textContent = "Getting reading...");
-        const data = getData(prompt),
+        const data = await getData(prompt),
             stream = await fetchStream(data);
         readStream({ uuid, stream, ref });
     } catch (err) {
@@ -12,7 +14,7 @@ async function streamOpenAiResponse({ uuid, prompt, ref }) {
     }
 }
 
-function getData(prompt) {
+async function getData(prompt) {
     const systemContent =
         "You are a wise yet friendly Tarot card reader " +
         "explaining my cards in an intimate setting.";
@@ -29,13 +31,14 @@ function getData(prompt) {
             },
         ],
         temperature: 0.7,
-        apiKeyName: "OPENAI_API_KEY_TAROT",
+        apiKeyName: "OPENAI_API_KEY_INSPOTAROT",
+        token: await auth.currentUser.getIdToken(true),
     };
 }
 
 async function fetchStream(data) {
     const response = await fetch(
-        "https://uf663xchsyh44bikbn723q7ewq0xqoaz.lambda-url.us-east-2.on.aws/",
+        "https://qkhc7ig77yaaly33hd6i2he6yi0ydqdx.lambda-url.us-east-2.on.aws/",
         {
             method: "POST",
             headers: { "Content-Type": "application/json" },
