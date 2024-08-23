@@ -31,7 +31,7 @@ async function getData(prompt) {
             },
         ],
         temperature: 0.7,
-        apiKeyName: "OPENAI_API_KEY_INSPOTAROT",
+        projectId: "INSPOTAROT",
         token: await auth.currentUser.getIdToken(true),
     };
 }
